@@ -1,0 +1,41 @@
+#face {
+    height: 400px;
+    width: 400px;
+    background-color: #ffb300;
+    border: 1px solid #b88100;
+    border-radius: 50%;
+}
+
+.eye {
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    display: inline-block;
+    border-radius: 50%;
+    position: sticky;
+    top: 120px;
+    margin-left: 100px;
+    z-index: 1;
+}
+
+#smile {
+    height: 200px;
+    width: 300px;
+    background-color: #ed3737;
+    position: relative;
+    top: 86px;
+    left: 53px;
+    /* margin: 83px auto 0px; */
+    border-radius: 50%;
+}
+
+#smile2 {
+    height: 200px;
+    width: 301px;
+    background-color: #ffb300;
+    position: relative;
+    top: -184px;
+    left: 51px;
+    /* margin: 83px auto 0px; */
+    border-radius: 50%;
+}

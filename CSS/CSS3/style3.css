@@ -1,0 +1,32 @@
+
+span {
+    /* background-color: purple; */
+    /* display: block; */
+    border: 2px solid black;
+    height: 100px;
+    width: 200px;
+    padding: 50px;
+    margin: 30px;
+}
+
+div {
+    border: 2px solid black;
+    height: 100px;
+    width: 200px;
+    padding: 50px;
+    margin: 30px;
+}
+
+.diff {
+    height: 150px;
+    width: 150px;
+    border: 2px solid black;
+    background-color: lightcoral;
+    margin: 5px;
+
+    display: inline-block;
+}
+
+#div4 {
+    display: none;
+}

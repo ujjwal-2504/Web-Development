@@ -1,0 +1,21 @@
+*::selection {
+    background-color: rgb(255, 196, 0);
+    color: black;
+}
+
+
+p {
+    text-align: justify;
+    line-height: 1.5;
+
+}
+
+h2 {
+    font-weight: bold;
+    text-decoration: blue overline wavy;
+
+}
+
+a {
+    text-decoration: none;
+}

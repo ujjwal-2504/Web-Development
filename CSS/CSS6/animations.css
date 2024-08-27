@@ -1,0 +1,81 @@
+.box {
+    height: 100px;
+    width: 300px;
+    background-color: lightsalmon;
+
+    /* animation-name: colorChange;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
+
+    /* animation: colorChange 2s ease-in-out 0s infinite alternate; */
+    /* animation: random 2s ease-in-out 0s infinite alternate; */
+    animation: randomColors 4s ease-in-out 0s infinite alternate;
+}
+
+@keyframes fontAnimation {
+    from {
+        font-size: 20px;
+    }
+    to {
+        font-size: 40px;
+    }
+}
+
+@keyframes colorChange {
+    from {
+        background-color: black;
+        color: chartreuse;
+        font-size: 20px;
+        width: 150px;
+    }
+    to {
+        background-color: #ffae00;
+        color: black;
+        font-size: 100px;
+        width: 600px;
+        border-radius: 30%;
+    }
+}
+
+@keyframes random {
+    0% {
+        background-color: black;
+        color: chartreuse;
+        font-size: 20px;
+        width: 150px;
+    }
+    50% {
+        background-color: aqua;
+        color: black;
+        width: 10px;
+        height: 500px;
+        border-radius: 50%;
+
+    }
+    100% {
+        background-color: #ffae00;
+        color: black;
+        font-size: 100px;
+        width: 600px;
+        border-radius: 30%;
+    }
+}
+
+@keyframes randomColors {
+
+    10% {
+        background-color: brown;
+    }
+    50% {
+        background-color: lightgreen;
+    }
+    100% {
+        background-color: darkmagenta;
+    }
+    10% {
+        background-color: blue;
+    }
+}

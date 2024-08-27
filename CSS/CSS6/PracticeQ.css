@@ -1,0 +1,91 @@
+
+h1, h2, h3, h4 {
+    font-family: 'Lucida Sans';
+}
+
+.banner {
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    background-color: rgb(255, 145, 0);
+    border-radius: 1.5rem;
+}
+
+.banner img {
+    border-radius: inherit;
+}
+
+.banner h2 {
+    text-align: center;
+    color: maroon;
+}
+
+p {
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+i {
+    color: brown;
+}
+
+h1 span {
+    color: crimson;
+}
+
+#pets {
+    display: flex;
+    width: auto;
+    /* border: 2px solid; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 1.1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid;
+    /* height: inherit; */
+    width: 30%;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #9fff9f;
+}
+
+.card p {
+    color: #004114;
+}
+
+.card img {
+    /* height: 210px; */
+    width: 100%;
+    border-radius: inherit;
+    align-self: center;
+}
+
+h4 {
+    text-align: right;
+    color: #012f30;
+}
+
+@media (max-width: 1200px) {
+
+    .card {
+        width: 40%;
+    }
+}
+
+@media (max-width: 550px) {
+
+    #pets {
+        flex-direction: column;
+    }
+    .card {
+        align-self: center;
+        width: 80%;
+    }
+}

@@ -1,0 +1,30 @@
+
+h1 {
+    text-decoration: underline wavy rgb(154, 105, 14);
+    color: rgb(88, 60, 7) ;
+
+}
+
+p {
+    color: #a52a2a;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+a {
+    color: rgb(7, 102, 7);
+    text-decoration: none;
+}
+
+#poet {
+    text-decoration: underline wavy darkgreen;
+}
+
+button {
+    background-color: white;
+    color: blueviolet;
+}
+
+textarea {
+    color: #000;
+}

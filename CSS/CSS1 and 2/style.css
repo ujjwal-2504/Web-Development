@@ -1,0 +1,125 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+*::selection {
+    background-color: black;
+    color: rgb(255, 196, 0);
+}
+
+h1, h3 {
+    color: #b92b27;
+    font-family: 'Lucida Sans Unicode';
+}
+
+h3 {
+    text-decoration: underline purple dashed;
+}
+
+#login {
+    color: #300504;
+    background-color: #ff8800 !important;
+}
+
+#signup {
+    background-color: #300504;
+}
+
+.follow {
+    text-decoration: none;
+    color: #300504;
+}
+
+nav ul li a {
+    text-decoration: none;
+    
+}
+
+nav ul li {
+    list-style-type:decimal-leading-zero;
+    color: #300504;
+}
+
+p + h3 + h3 {
+    text-decoration: underline purple;
+}
+
+.upvote + button {
+    background-color: aqua;
+    color: #300504;
+}
+
+input[type = "text"] {
+    color: rgb(255, 255, 126);
+    background-color: black; 
+}
+
+input[type = "password"] {
+    color: chartreuse;
+    background-color: #300504;
+}
+
+button[class] {
+    background-color: purple;
+    color: darksalmon;
+}
+
+button:hover {
+
+    background-color: black;
+    color: white;
+}
+
+h3, main >p:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: rgb(255, 187, 0);
+    color: #ff0000;
+}
+
+main >p:active {
+    font-weight: bold;
+    color: darkred;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+}
+
+footer h3 {
+    background-color: rgb(255, 179, 0);
+    color: darkgreen;
+}
+
+footer input[type = "radio"]:checked + label {
+    color: red;
+    font-weight: bold;
+}
+
+.post:nth-of-type(2n+1) {
+    background-color: rgb(255, 210, 137);
+}
+
+.post:nth-of-type(2n) {
+    background-color: rgb(255, 150, 241);
+}
+
+h1::first-letter {
+    color: #ff0000;
+}
+
+span p::first-line {
+    color: darkmagenta;
+}
+
+.name {
+    color: yellow;
+}
+
+ #myname{
+    color: red;
+}

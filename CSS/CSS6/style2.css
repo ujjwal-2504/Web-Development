@@ -1,0 +1,93 @@
+h1 {
+    background-color: yellow;
+    border: 2px solid;
+    font-family: 'Lucida Sans';
+}
+
+div {
+    background-color: black;
+    height: 100px;
+    /* width: 200px; */
+    color: orange;
+}
+
+/* @media (width: 400px) {
+
+    h1 {
+        background-color: red;
+        color: white;
+    }
+
+    div {
+        background-color: blue;
+        width: 200px;
+        height: 300px;
+        color: wheat;
+    }
+} */
+
+@media (min-width: 700px) {
+
+    h1 {
+        background-color: #000000;
+        color: #ff9900;
+    }
+
+    div {
+        background-color: #00c8ff;
+        /* width: 400px; */
+        height: 600px;
+        color: #ff0000;
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 200px) {
+
+    h1 {
+        background-color: red;
+        color: white;
+    }
+
+    div {
+        background-color: blue;
+        width: 200px;
+        height: 300px;
+        color: wheat;
+        font-size: 40px;
+    }
+}
+
+/* Range */
+@media (min-width: 400px) and (max-width: 600px) {
+    
+    h1 {
+        background-color: black;
+        color: white;
+    }
+
+    div {
+        background-color: black;
+        width: 400px;
+        height: 800px;
+        color: magenta;
+        font-size: 100px;
+    }
+}
+
+/* Orientation */
+@media (orientation: landscape) {
+
+    h1 {
+        background-color: maroon;
+        color: lightseagreen;
+    }
+
+    div {
+        background-color: darkgoldenrod;
+        /* width: 400px; */
+        height: 200px;
+        color: #36000e;
+        font-size: 100px;
+    }
+}

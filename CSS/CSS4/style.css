@@ -1,0 +1,85 @@
+/* #first {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(249, 149, 0);
+    margin: 0 auto;
+    transition: margin-top 1s linear 0.2s;
+}
+#first:hover {
+    background-color: rgb(0, 0, 0);
+    margin-top: 400px;
+} */
+
+/* h1 {
+    opacity: 0.5;
+} */
+
+section {
+    margin-top: 100px;
+}
+
+div {
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
+    text-align: center;
+    margin: 10px auto;
+    background-color: #F5004F;
+}
+
+#num2, #num6 {
+    background-color: #FFAF00;
+}
+
+#num3, #num5 {
+    background-color: #F9E400;
+}
+
+#num4 {
+    background-color: #7C00FE;
+}
+
+/* Transform */
+
+#num1 {
+    transform: rotate(45deg);
+}
+
+#num2 {
+    /* transform: scale(0.5); */
+    /* transform: scale(3, 0.3); */
+    transform: scaleX(0.5);
+}
+
+#num3 {
+    transform: translate(200px, -100px);
+    /* transform: translateX(200px);
+    transform: translateY(-100px); */
+}
+
+#num4 {
+    transform: skew(68deg, 161deg);
+    /* transform: skewX(161deg);
+    transform: skewY(68deg); */
+}
+
+#num5 {
+    transform: rotate(-45deg) translateY(-200px);
+}
+
+#num6 {
+    height: 200px;
+
+    box-shadow: 10px -7px 18px 7px rgb(69, 4, 4);
+}
+
+#box {
+    height: 400px;
+    width: 800px;
+    background-color: rgb(117, 241, 117);
+    margin: 10px auto;
+    background-image: url(bgImg2.jpg);
+    background-size: cover;
+    color: white;
+    font-weight: bold;
+}

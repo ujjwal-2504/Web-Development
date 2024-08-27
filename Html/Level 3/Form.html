@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    
+    <form action="/server">
+
+        <div>
+            <label>
+                Username: 
+                <input type="text" placeholder="Type username" name="username">
+            </label>
+        </div>
+
+        <div>
+            <label for="password">Type Your Password: </label>
+            <input type="password" placeholder="password", id="password" name="password">
+        </div>
+        
+        <div>
+            <label for="age">Enter Your Age: </label>
+            <input type="number" placeholder="Type Number" id="age">
+        </div>
+        
+        <button type="submit">Submit Button</button>
+        <button type="button">Normal Button</button>
+        <button type="reset">Reset Button</button>
+        <button type="menu">Menu Button</button>
+        <br>
+
+        <input type="button" value="Normal Button">
+        <input type="submit">
+        <input type="reset" value="Reset Button">
+    </form>
+    <hr>
+    <form action="https://www.youtube.com/results?">
+        <input type="text" id="search" placeholder="Search on youtube" name="search_query">
+        <button>Youtube Search</button>
+    </form>
+
+    <h2>Practice Q8</h2>
+
+    <form action="https://www.google.com/search?&rlz=1C1RXQR_enIN1057IN1057&oq=&gs_lcrp=EgZjaHJvbWUqCQgEECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyCQgFECMYJxjqAjIJCAYQIxgnGOoCMgkIBxAjGCcY6gLSAQoxMTg0NGowajE1qAIIsAIB&sourceid=chrome&ie=UTF-8">
+        <input type="text" placeholder="Search in Google" name="q">
+        <button>Google Search</button>
+    </form>
+
+    <hr>
+
+    <form action="/server2">
+
+        <input type="checkbox" name="age" id="age2" checked>
+        <label for="age2">: I am 18<sup>+</sup></label>
+        <button>Submit</button>
+
+        <h3>Choose one</h3>
+        <div>
+            <label for="apple">Apple: </label>
+            <input type="radio" id="apple" name="fruit" value="apple">
+
+            <label for="mango">Mango: </label>
+            <input type="radio" id="mango" name="fruit" value="mango">
+
+            <label for="Orange">Orange: </label>
+            <input type="radio" id="Orange" name="fruit" value="orange">
+
+        </div>
+
+        <div>
+            <label for="frooti">Frooti: </label>
+            <input type="radio" id="frooti" name="bevrage" value="frooti">
+
+            <label for="samosa">Samosa: </label>
+            <input type="radio" id="samosa" name="bevrage" value="samosa">
+
+            <label for="chips">Chips: </label>
+            <input type="radio" id="chips" name="bevrage" value="chips">
+
+        </div>
+
+        <br>
+
+        <div>
+
+            Choose your Subject:
+            <br>
+            <label for="Maths">Maths: </label>
+            <input type="checkbox" name="sub" id="Maths" value="maths">
+
+            <label for="Science">Science: </label>
+            <input type="checkbox" name="sub" id="Science" value="sci">
+
+            <label for="Computer">Computer: </label>
+            <input type="checkbox" name="sub" id="Computer" value="comp">
+
+            <label for="Hindi">Hindi: </label>
+            <input type="checkbox" name="sub" id="Hindi" value="hindi">
+
+        </div>
+
+        <br>
+
+        <div>
+            Choose Your Profession
+            <select name="profession" id="profession">
+                <option>Select your options</option>
+                <option value="student">Student</option>
+                <option value="dev" selected>Developer</option>
+                
+            </select>
+        </div>
+
+        <label for="vol">Volume: </label>
+        <input type="range" id="vol" min="0" max="100" step="10" name="vol" value="70">
+
+        <button>Submit</button>
+        
+    </form>
+
+</body>
+</html>
