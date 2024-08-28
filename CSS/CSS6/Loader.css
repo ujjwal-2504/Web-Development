@@ -1,0 +1,131 @@
+.loader {
+    display: inline-block;
+    border: 16px solid #edc8c8;
+    border-top: 16px double goldenrod;
+    border-left: 16px dotted goldenrod;
+    border-right: 16px dotted goldenrod;
+    border-bottom: 16px double goldenrod;
+    border-radius: 50%;
+    /* background-color: aqua; */
+    /* border: 2px solid; */
+    width: 120px;
+    height :120px;
+    animation: spin 2s linear infinite;
+}
+
+div {
+    margin: 20px;
+}
+
+#l2 {
+    display: inline-block;
+    border: 16px solid goldenrod;
+    border-top: 16px goldenrod;
+    /* border-bottom: 16px goldenrod;
+    border-left: 16px goldenrod; */
+    border-radius: 50%;
+    background-color: #352205;
+    width: 120px;
+    height :120px;
+    animation: spin 2s linear infinite;
+}
+
+#l3 {
+    display: inline-block;
+    border: 16px solid goldenrod;
+    /* border-top: 16px #daa520; */
+    border-radius: 35%;
+    background-color: #352205;
+    width: 120px;
+    height :120px;
+    animation: spin 2s linear infinite;
+}
+
+#l4 {
+    /* display: inline-block; */
+    border: 8px solid goldenrod;
+    /* border-top: 16px #daa520; */
+    border-radius: 35%;
+    background-color: #352205;
+    width: 50%;
+    height :50%;
+    animation: spin2 1s linear infinite;
+}
+
+#l5 {
+    /* display: inline-block; */
+    border: 4px solid goldenrod;
+    /* border-top: 16px #daa520; */
+    border-radius: 35%;
+    background-color: #352205;
+    width: 50%;
+    height :50%;
+    animation: spin 1s linear infinite;
+}
+
+#l6 {
+    display: inline-block;
+    border: 16px solid goldenrod;
+    border-top: 16px #daa520;
+    border-radius: 50%;
+    background-color: #352205;
+    width: 120px;
+    height :120px;
+    animation: spin 2s linear infinite;
+}
+
+#l7 {
+    /* display: inline-block; */
+    border: 8px solid goldenrod;
+    border-top: 16px #daa520;
+    border-radius: 50%;
+    background-color: #352205;
+    width: 50%;
+    height :50%;
+    animation: spin2 1s linear infinite;
+}
+
+#l8 {
+    /* display: inline-block; */
+    border: 4px solid goldenrod;
+    border-top: 16px #daa520;
+    border-radius: 50%;
+    background-color: #352205;
+    width: 50%;
+    height :50%;
+    animation: spin 1s linear infinite;
+}
+
+
+#l9 {
+    display: inline-block;
+    /* border: 16px solid goldenrod; */
+    border-top: 40px solid goldenrod;
+    border-radius: 50%;
+    background-color: #352205;
+    width: 120px;
+    height :120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        /*Set rotation to 0 degrees*/
+        transform: rotate(0deg);
+    }
+    100% {
+        /*Set rotation to 360 degrees*/
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin2 {
+    0% {
+        /*Set rotation to 0 degrees*/
+        transform: rotate(360deg);
+    }
+    100% {
+        /*Set rotation to 360 degrees*/
+        transform: rotate(0deg);
+    }
+}

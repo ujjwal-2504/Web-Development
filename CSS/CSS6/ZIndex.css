@@ -1,0 +1,19 @@
+div {
+    height: 150px;
+    width: 150px;
+    border: 2px solid;
+    background-color: crimson;
+}
+
+#box1 {
+    background-color: aquamarine;
+    position: relative;
+    z-index: 1;
+}
+
+#box2 {
+    background-color: coral;
+    position: relative;
+    z-index: 0;
+    bottom: 50px;
+}
