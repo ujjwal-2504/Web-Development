@@ -1,2 +1,2 @@
 # Web-Development
-My web development learning
+My web development learnings
