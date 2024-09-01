@@ -258,6 +258,8 @@ a {
     border-top: 1px solid #ffffff40;
 }
 
+/* Music Player */
+
 
 .music-player {
     background-color: black;
@@ -265,6 +267,134 @@ a {
     bottom: 0%;
     width: 100%;
     height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.music-player i {
+    opacity: 0.6;
+}
+.music-player i:hover {
+    opacity: 1;
+}
+
+.album {
+    width: 25%;
+    /* background-color: crimson; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current-song {
+    display: flex;
+    margin-left: 1rem;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.current-song:hover {
+    background-color: #232323;
+}
+
+.album img {
+    height: 3.5rem;
+    border-radius: 8px;
+}
+
+.album-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.album-content p {
+    font-size: 0.7rem;
+    margin:0.2rem 0 0 1rem;
+}
+
+.album-icon {
+    margin-right: 1.5rem;
+}
+
+.player {
+    width: 50%;
+    /* background-color: crimson; */
+    border-left: 2px solid #ffffff30;
+    border-right: 2px solid #ffffff30;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-control-icon {
+    height: 0.9rem;
+    margin: 0 0.75rem 0;
+    opacity: 0.7;
+}
+
+.player-control-icon:hover {
+    opacity: 1;
+}
+
+.play {
+    height: 2rem;
+    opacity: 1;
+}
+
+.playback-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 70%;
+    /* height: 0.2rem; */
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0 1rem 0;
+}
+
+.progress-bar::-webkit-slider-runnable-track {
+    background-color: #ddd;
+    border-radius: 100px;
+    height: 0.2rem;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    border-radius: 50%;
+    background-color: #1bd760;
+    height: 1rem;
+    width: 1rem;
+    margin-top: -7px;
+}
+
+.controls {
+    width: 25%;
+    /* background-color: crimson; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.volume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume-bar {
+    margin-left: 0.5rem;
+}
+
+
 
 
