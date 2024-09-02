@@ -225,10 +225,19 @@ a {
     border-radius: 0.5rem;
     padding: 0.8rem;
     margin: 0.5rem 0 0 1rem;
+    position: relative;
 }
 
 .card:hover {
     background-color: #232323;
+}
+
+.card:hover >img {
+    box-shadow: 0 0 1rem black;
+}
+
+.card:hover > .play-icon {
+    display: inline;
 }
 
 .card img {
@@ -244,6 +253,20 @@ a {
 .card-info {
     font-size: 0.85rem;
     opacity: 0.8rem;
+}
+
+.card .play-icon {
+    font-size: 3rem;
+    color: #1bd760;
+    position: absolute;
+    right: 1rem;
+    text-shadow: 0 0 1rem #000;
+    display: none;
+}
+
+.card .play-icon:hover {
+    text-shadow: 0 0 1.5rem #000;
+    font-size: 3.2rem;
 }
 
 .footer {
@@ -317,6 +340,11 @@ a {
 
 .album-icon {
     margin-right: 1.5rem;
+}
+
+.wishlist:hover {
+    color: red;
+    text-shadow: 0 0 2px red;
 }
 
 .player {
