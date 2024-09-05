@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#sonyLogo {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0;
+  /* border: 2px solid; */
+  background-color: black;
+  padding: 0.2rem ;
+}
+
+#sonyLogo img {
+  height: 0.7rem;
+  filter: invert(100%);
+}
+
+nav {
+  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #16c5ed;
+}
+.upper-nav {
+  /* border: 2px solid; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.nav-options {
+  /* border: 2px solid; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+}
+.upper-nav .nav-options img {
+  height: 2.5rem;
+}
+
+.nav-options a {
+  text-decoration: none;
+  margin-right: 0.5rem;
+  color: black;
+}
+
+.nav-options a i {
+  color: grey;
+}
+
+.nav-options a:hover{
+  color: #4b4bc9;
+}
+.nav-options a:hover > i{
+  color: #4b4bc9;
+}
+
+
+.nav-signin i , .signin-btn {
+  margin-right: 1rem;
+  font-size: 0.8rem;
+}
+
+.nav-signin i:hover {
+  cursor: pointer;
+}
+
+.signin-btn {
+  background-color: #6c6cee;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.signin-btn:hover {
+  background-color: #4b4bc9;
+  cursor: pointer;
+}
+
+.lower-nav {
+  position: relative;
+  display: flex;
+  /* border: 2px solid; */
+  justify-content: center;
+  align-items: center;
+  background-image: url(./Assets/night-sky-copy.jpg);
+  background-size: cover;
+  height: 2rem;
+}
+
+.lower-nav p {
+  color: white;
+  margin-right: 1rem;
+  font-size: bold;
+  text-shadow: 0 0 1rem black;
+}
+
+.lower-nav i {
+  font-size: 1rem;
+  margin-right: 0.3rem;
+}
+
+.lower-nav button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80%;
+  border: 1px solid black;
+  background-color: white;
+  /* color: transparent; */
+  border-radius: 1rem;
+  font-size: 0.6rem;
+  font-weight: bold;
+}
+
+.lower-nav img {
+  position: absolute;
+  height: 4rem;
+  top: 0;
+  right: 13rem;
+}
