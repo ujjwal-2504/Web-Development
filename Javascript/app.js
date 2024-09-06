@@ -1,5 +1,9 @@
 // console.log("Hello JavaScript");
 
-let a = 5, b = 10;
+let pencilPrice = 10;
+let eraserPrice = 5;
 
-console.log("The sum is:", a+b);
+// let output = "The total price is: " + (eraserPrice + pencilPrice) + " Rupees"
+// let output = `The total price is: ${eraserPrice + pencilPrice} Rupees`;
+
+console.log(`The total price is: ${eraserPrice + pencilPrice} Rupees`);
