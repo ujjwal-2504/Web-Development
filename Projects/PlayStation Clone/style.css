@@ -7,6 +7,7 @@ main {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
 #sonyLogo {
@@ -31,7 +32,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 0.15rem solid #16c5ed;
+  border-bottom: 0.15rem solid #0070CC;
 }
 .upper-nav {
   /* border: 2px solid; */
@@ -59,6 +60,8 @@ nav {
   text-decoration: none;
   margin-right: 0.7rem;
   color: black;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 .nav-options a i {
@@ -113,7 +116,7 @@ nav {
   margin-right: 1.7rem;
   font-size: 1.2rem;
   text-shadow: 0 0 1rem black;
-  font-weight: bold;
+  font-weight: 1000;
 }
 
 .lower-nav i {
@@ -152,8 +155,8 @@ nav {
 }
 
 .big-banner {
-  /* background-image: url(./Assets/valorant-hero.jpg); */
-  /* background-size: cover; */
+  background-image: url(./Assets/valorant-hero.jpg);
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -161,8 +164,8 @@ nav {
   width: 100%;
   height: 80vh;
   color: white;
-  /* box-shadow: inset 20rem -0rem 10rem 10rem black; */
-  background: linear-gradient(90deg, #000000, white), url(./Assets/valorant-hero.jpg);
+  box-shadow: inset 20rem -0rem 10rem 10rem black;
+  /* background: linear-gradient(90deg, #000000, white), url(./Assets/valorant-hero.jpg); */
   /* opacity: 50%; */
 }
 
@@ -185,6 +188,7 @@ nav {
 .big-banner-content h1 {
   font-size: 2.5rem;
   margin-bottom: 0;
+  font-weight: 300;
 }
 
 .big-banner-content p {
@@ -192,20 +196,111 @@ nav {
   margin-bottom: 2rem;
 }
 
-.big-banner-content button {
-  font-size: 1.1rem;
-  padding: 0.5rem 1rem;
+.btn {
+  font-size: 0.9rem;
+  padding: 0.7rem 1.2rem;
   border-radius: 4rem;
+  border: none;
+  font-weight: bold;
 }
+
 
 .banner-container {
   display: flex;
   justify-content: center;
-  width: 100%;
+  /* width: 100%; */
+  align-items: center;
+  /* border: 2px solid; */
+  height: 12rem;
+
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6.5rem;
+  /* border: 2px solid; */
+  padding: 0 0.2rem;
+  margin-right: 0.5rem;
+  border-radius: 1rem;
+}
+
+.banner:nth-of-type(1) {
+  border: 2px solid blue;
 }
 
 .banner img {
-  height: 30%;
-  width: 10%;
-  
+  height: 92%;
+  border-radius: inherit;
+  opacity: 0.8;
+}
+
+.banner:hover > img {
+  opacity: 1;
+  box-shadow: 0 0.5rem 1rem 0.2rem gray;
+}
+.banner:hover {
+  transform: translateY(-0.5rem);
+}
+
+.banner:hover ~ .banner {
+  opacity: 0.5;
+}
+
+.accessories {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5rem;
+  margin-top: 3rem;
+  /* border: 2px solid; */
+
+}
+
+.current-item {
+  display: flex;
+  /* border: 2px solid; */
+  justify-content: space-between;
+}
+
+.current-item img {
+  height: 29rem;
+}
+
+.current-item-info {
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+}
+
+.current-item-info h1 {
+  font-size: 3.4rem;
+  font-weight: 300;
+  margin-top: 1.5rem;
+}
+
+.current-item-info h2 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  color: #6c6cee;
+}
+.current-item-info p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.current-item-info p:nth-of-type(2) {
+  font-size: 1.1rem;
+}
+
+.red-btn {
+  background-color: #D53B00;
+  color: white;
+}
+
+.blue-btn {
+  background-color: #0070CC;
+  color: white;
 }
