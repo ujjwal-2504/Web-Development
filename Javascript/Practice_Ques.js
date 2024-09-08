@@ -37,3 +37,17 @@ if(n1 % 10 == n2 % 10)
   console.log("Yes");
 else 
   console.log("no");
+
+let msg = "   hello!  ";
+console.log(msg.trim().toUpperCase());
+
+let name = "ApnaCollege";
+
+console.log(name.slice(4, 9));
+console.log(name.indexOf("na"));
+console.log(name.replace("Apna", "Our"));
+let newName = name.slice(4).replace("l", "t");
+console.log(newName);
+newName = newName.replace("l", "t");
+console.log(newName);
+console.log(name.slice(4).replace("l", "t").replace("l", "t"));
