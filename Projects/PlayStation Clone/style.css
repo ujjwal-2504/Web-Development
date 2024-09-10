@@ -368,3 +368,42 @@ nav {
   height: 96%;
   transform: scale(1.05);
 }
+
+.games {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #121314;
+  margin-top: 12rem;
+  padding-top: 6rem;
+}
+
+.games h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.game-switch {
+  margin: 2rem 0;
+  border: 1px solid white;
+  border-radius: 2rem;
+}
+
+.game-switch .btn {
+  padding: 0.9rem 0.8rem;
+  border-radius: 2rem;
+}
+
+
+
+.games-container {
+  display: flex;
+  justify-content: center;
+}
+
+.game img{
+  height: 13rem;
+}
