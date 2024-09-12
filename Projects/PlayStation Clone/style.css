@@ -378,6 +378,7 @@ nav {
   background-color: #121314;
   margin-top: 12rem;
   padding-top: 6rem;
+  padding: 6rem 12rem 0rem;
 }
 
 .games h1 {
@@ -387,9 +388,14 @@ nav {
 }
 
 .game-switch {
-  margin: 2rem 0;
-  border: 1px solid white;
+  margin: 3rem 0;
+  /* border: 1px solid white; */
   border-radius: 2rem;
+  background-color: #242628;
+}
+
+.game-switch:hover {
+  box-shadow: 0rem 0.2rem 0.7rem 0.1rem black;
 }
 
 .game-switch .btn {
@@ -397,13 +403,48 @@ nav {
   border-radius: 2rem;
 }
 
+.game-switch .btn:nth-of-type(2) {
+  background-color: transparent;
+  color: white;
+}
 
+.game-switch .btn:nth-of-type(2):hover {
+  color: #0070CC;
+}
 
 .games-container {
   display: flex;
   justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.game {
+  margin-right: 1rem;
+  cursor: pointer;
+  margin-bottom: 1.2rem;
 }
 
 .game img{
   height: 13rem;
+  width: 13rem;
+  border-radius: 0.5rem;
+  box-shadow: 0rem 0.2rem 0.7rem 0.1rem black;
+  transition: transform 0.3s ease;
+}
+
+.game p {
+  margin-top: 0.5rem;
+}
+
+.banner:hover > img {
+  opacity: 1;
+  box-shadow: 0 0.5rem 1rem 0.2rem gray;
+}
+.game img:hover {
+  transform: scale(1.05);
+}
+
+.game:hover ~ .game{
+  opacity: 0.5;
 }
