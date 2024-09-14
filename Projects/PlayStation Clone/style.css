@@ -448,3 +448,83 @@ nav {
 .game:hover ~ .game{
   opacity: 0.5;
 }
+
+.playstation-plus {
+  background-image: url(https://gmedia.playstation.com/is/image/SIEPDC/play-play-play-ps-plus-background-desktop-01-ja-jp-03jul23?$2400px$);
+
+  background-size: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0 3rem;
+}
+
+.playstation-plus > img{
+  height: 4.4rem;
+  margin-bottom: 0;
+}
+
+.playstation-plus h1 {
+  font-size: 2.5rem;
+  font-weight: 350;
+  margin: 0;
+}
+
+.playstation-plus > p {
+  margin: 2rem 0;
+  opacity: 0.5;
+}
+
+.play-plus-card-container {
+  display: flex;
+}
+
+.play-plus-card {
+  background-image: url(./Assets/spiderman.jpg);
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  height: 16rem;
+  color: white;
+  padding: 2rem;
+  align-items: start;
+  justify-content: end;
+  border-radius: 1rem;
+  width: 60%;
+  
+  
+}
+
+.plus-card-options {
+  /* border: 2px solid white; */
+  width: 50%;
+  padding: 0;
+}
+
+.plus-card-options p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.plus-card-options h2 {
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.plus-card-options button {
+  background-color: #242628;
+  border: 0.09rem solid #65d1ff;
+  font-size: 1rem;
+  padding: 0.2rem 5rem;
+  color: gold;
+  font-weight: 600;
+  font-family:'Lucida Sans', 'Lucida Sans Regular';
+  letter-spacing: 0.3rem;
+}
+
+.playstation-plus > button {
+  margin-top: 5rem;
+}
+
