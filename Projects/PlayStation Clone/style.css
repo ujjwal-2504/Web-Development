@@ -197,7 +197,7 @@ nav {
 }
 
 .btn {
-  font-size: 0.9rem;
+  font-size: 1rem;
   padding: 0.7rem 1.2rem;
   border-radius: 4rem;
   border: none;
@@ -493,8 +493,6 @@ nav {
   justify-content: end;
   border-radius: 1rem;
   width: 60%;
-  
-  
 }
 
 .plus-card-options {
@@ -525,6 +523,101 @@ nav {
 }
 
 .playstation-plus > button {
-  margin-top: 5rem;
+  margin: 5rem 0 2rem;
+  font-size: 1rem;
 }
 
+.vr-poster {
+  background-image: url(https://gmedia.playstation.com/is/image/SIEPDC/psvr2-register-homepage-hero-desktop-01-en-14nov22?$4000px$);
+  background-size: cover;
+  padding: 7rem 7rem;
+  color: white;
+}
+
+.vr-poster .current-item-info {
+  width: 40%;
+}
+
+.vr-poster h1 {
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+}
+
+.vr-poster p:nth-of-type(1) {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.next-poster {
+  background-image: url(https://gmedia.playstation.com/is/image/SIEPDC/this-month-on-playstation-sep-homepage-background-desktop-02-en-23aug24?$4000px$);
+}
+
+.more-releases {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #26264F;
+  flex-wrap: wrap;
+  padding: 2rem 15rem;
+}
+
+.block-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.block {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.3rem;
+  width: 40%;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.block:hover {
+  border: 0.15rem solid #fefafa97;
+  transform: translateY(-0.5rem);
+}
+
+.block:hover > .block-info {
+  background-color: #282727c7;
+  box-shadow: 0rem 0.1rem 0.2rem 0.1rem #000000b9;
+}
+
+.block-info {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  border-radius: inherit;
+  padding: 0.8rem;
+  /* flex-wrap: wrap; */
+}
+
+.block-info img {
+  height: 13rem;
+  border-radius: inherit;
+}
+
+.block-info h3 {
+  font-size: 1.3rem;
+  font-weight: 350;
+  margin-bottom: 0;
+  margin-left: 1rem;
+}
+
+.block-info p {
+  font-size: 0.9rem;
+  font-weight: 350;
+  margin: 1rem;
+}
+
+.more-releases .btn {
+  margin: 3.5rem 0 2rem;
+}
