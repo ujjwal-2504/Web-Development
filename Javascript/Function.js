@@ -54,10 +54,76 @@ function changeGreet () {
   innerGreet();
 }
 
-console.log(greet);
-changeGreet();
+// console.log(greet);
+// changeGreet();
 
 const sum = function(a, b) {
 
   return a+b;
 }
+
+// High Order Functions: Takes functions as arguments or return a function
+function multipleGreet(func, n) {
+
+  for(let i = 1; i <= n; i++) {
+    func();
+  }
+}
+
+let greetAgain = function() {
+  console.log("Namaste");
+}
+
+// multipleGreet(function() {console.log("Hello")}, 10);
+
+// Factory Function.
+
+function oddEvenTest(request) {
+
+  if(request == "even") {
+
+    return function(n) {
+      console.log(n%2 == 0);
+    }
+
+  }
+  else if(request == "odd") {
+
+    return function(n) {
+      console.log(!(n%2 == 0));
+    }
+
+  }
+  else {
+    console.log("Wrong Request");
+  }
+}
+
+let funcOdd = oddEvenTest("odd");
+let funcEven = oddEvenTest("even");
+
+// Methods: function defined in an object.
+
+const Calculator = {
+
+  add: function (a, b) {
+    return a+b;
+  },
+
+  sub(a, b) {
+    return a-b;
+  },
+
+  mul: function (a, b) {
+    return a*b;
+  },
+
+  div(a, b) {
+    return a/b;
+  },
+
+  rem: function (a, b) {
+    return a%b;
+  }
+
+};
