@@ -72,3 +72,76 @@ function generateRandomNum(a, b) {
 
   return Math.floor(Math.random() * diff) + a;
 }
+
+// More questions
+
+// Q.
+
+const square = (n) => n*n;
+
+// Q.
+
+// let id = setInterval( () => {
+//   console.log("Hello, Kya haal");
+// }, 2000);
+
+// setTimeout( () => {
+//   clearInterval(id);
+//   console.log("Interval cleared");
+// }, 10000);
+
+// Assignment Questions
+
+// Q1.
+
+const arrayAverage = (arr) => {
+  
+  let avg = 0;
+
+  for(let i = 0; i < arr.length; i++) {
+    avg += arr[i];
+  }
+
+  avg = avg/arr.length;
+
+  return avg;
+
+}
+
+// Q2.
+
+const isEven = num => num % 2 == 0;
+
+// Q3.
+
+const object = {
+
+  message: 'Hello, Kya haal',
+
+  logMessage() {
+    console.log(this.message);
+  }
+
+};
+
+setTimeout(object.logMessage, 1000);
+
+// Q4.
+
+let length = 4;
+
+function callback() {
+  console.log(this.length);
+}
+
+const obj = {
+
+  length: 5,
+
+  method(callback) {
+    callback();
+  },
+
+};
+
+obj.method(callback, 1, 2);
