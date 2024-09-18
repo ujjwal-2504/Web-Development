@@ -1,13 +1,14 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  font-family: "Roboto", sans-serif;
 }
 
 #sonyLogo {
@@ -632,6 +633,7 @@ nav {
 .psStore > img{
   height: 30rem;
   border-radius: 1rem;
+  
 }
 
 .psStore-details {
@@ -669,36 +671,160 @@ nav {
 .latest-news-cards-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+  margin: 5rem 0;
 }
 
 .news-card {
   display: flex;
+  flex: 1;
+  height: 35rem;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid;
-  width: 30%;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* border: 2px solid; */
+  border-radius: 1rem;
+  width: 25%;
+  margin-left: 1rem;
+  padding: 0.5rem 0;
+  box-shadow: 0 0.1rem 0.5rem 0.1rem #00000019;
+  transition: 1s;
 }
 
-.news-card > img {
+.news-card:hover {
+  box-shadow: 0 0.2rem 0.5rem 0.2rem #0000003e;
+}
+
+.news-card:hover > .card-top > img{
+  box-shadow: 0rem 0.3rem 0.5rem 0.2rem #000000d2;
+}
+
+.news-card .card-top > img {
   height: 15rem;
+  border-radius: 1rem;
+  width: 97%;
+  align-self: center;
+  justify-self: flex-start;
+ box-shadow: 0rem 0.2rem 0.5rem 0.1rem #000000b8;
+ transition: 0.2s;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: column;
 }
 
 .news-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin: 0 1.5rem;
+}
+
+.news-details h2 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  opacity: 1;
+}
+
+.news-details p {
+  margin: 0;
+  opacity: 0.7;
+  font-size: 0.9rem;
 }
 
 .news-source {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 0.8rem;
+  margin: 1rem 1.5rem 1rem;
 }
 
 .news-source img {
   height: 3rem;
   width: 3rem;
+  align-self: flex-start;
+  margin-right: 1rem;
+}
+
+.news-source-info > p, h4 {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.news-source-info >:nth-child(3) {
+  opacity: 0.8;
+}
+
+.social-media {
+  background-color: #F5F7FA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.social-media >p  {
+  opacity: 0.8;
+
+}
+
+.social-media-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45%;
+  margin: 5rem 0;
+}
+.social-media-icons i {
+  font-size: 6rem;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.social-media-icons i:hover {
+  transform: scale(1.05);
+}
+
+#copyright {
+  font-size: 0.5rem;
+  line-height: 7rem;
+  padding-left: 5rem;
+}
+
+footer {
+  background-color: #00439C;
+  padding: 2rem 5rem;
+  color: white;
+}
+
+footer >img {
+  height: 3.2rem;
+}
+
+.footer-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.05rem solid #ffffff71;
+  border-bottom: 0.05rem solid #ffffff71;
+  margin: 1rem 0;
+}
+
+.column ul{
+  list-style-type: none;
+  padding: 0;
+  line-height: 2;
+  font-size: 0.9rem;
+}
+
+.column ul li:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
