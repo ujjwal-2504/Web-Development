@@ -68,3 +68,17 @@ const classInfo2 = [
   },
 
 ];
+
+let data = {
+
+  name: "Ujjwal",
+  address: "Ranchi",
+
+};
+
+let dataCpy = {...data, email: "ujjwal25@gmail.com"};
+
+let arr = [1, 22, 44, 55, 66, 78, 98];
+
+let dataCpy2 = {...arr};
+let obj2 = {..."String"};

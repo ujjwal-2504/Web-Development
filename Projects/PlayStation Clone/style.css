@@ -203,6 +203,10 @@ nav {
   border-radius: 4rem;
   border: none;
   font-weight: bold;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 
@@ -811,7 +815,7 @@ footer >img {
 .footer-column {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   border-top: 0.05rem solid #ffffff71;
   border-bottom: 0.05rem solid #ffffff71;
   margin: 1rem 0;
@@ -827,4 +831,88 @@ footer >img {
 .column ul li:hover {
   opacity: 0.7;
   cursor: pointer;
+}
+
+.column ul span i{
+  font-size: 1.5rem;
+  margin-right: 1rem;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+
+.license {
+  /* border: 2px solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.license p {
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.license p u:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.license .logos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.license .logos img {
+  height: 5rem;
+}
+
+.license .logos img:nth-of-type(2) {
+  height: 4rem;
+  border: 0.05rem solid white;
+}
+
+.policy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  border-top: 0.05rem solid #ffffff71;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+}
+
+#select-country {
+  display: flex;
+  align-items: center;
+  &:hover {cursor: pointer;}
+}
+
+#select-country > * {
+  margin-right: 1rem;
+
+}
+
+#select-country i {
+  font-size: 1.2rem;
+}
+
+#terms-link {
+  display: flex;
+  align-items: center;
+}
+
+#terms-link p {
+  padding: 0 0.5rem;
+  border-right: 0.05rem solid #ffffff71;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
 }
