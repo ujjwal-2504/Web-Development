@@ -217,18 +217,18 @@ nav {
   border-radius: 4rem;
   border: none;
   font-weight: bold;
-  position: relative;
+  /* position: relative; */
 
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 
   &:hover{
     cursor: pointer;
   }
 }
 
-.btn::after {
+/* .btn::after {
   content: ' ';
   position: absolute;
   height: 109%;
@@ -236,7 +236,7 @@ nav {
   border-radius: inherit;
   background-color: transparent;
   border: 0.2rem solid ;
-}
+} */
 
 
 .banner-container {
