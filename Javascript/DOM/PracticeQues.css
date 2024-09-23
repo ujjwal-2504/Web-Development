@@ -1,0 +1,16 @@
+.red {
+  color: red;
+}
+
+.size {
+  font-size: 2rem;
+}
+
+.blue {
+  color: blue;
+}
+
+.box {
+  background-color: pink;
+  border: 2px solid;
+}
