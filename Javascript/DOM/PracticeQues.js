@@ -1,10 +1,13 @@
+
+let body = document.querySelector('body');
+
 // Q1.
 
 let p1 = document.createElement('p');
 p1.innerText = "Hey, I'm red!!";
 p1.classList.add('red');
 
-document.querySelector('body').append(p1);
+body.append(p1);
 
 // Q2.
 
@@ -12,7 +15,7 @@ let h3 = document.createElement('h3');
 h3.innerText = "Hii I am blue h3";
 h3.classList.toggle('blue');
 
-document.querySelector('body').append(h3);
+body.append(h3);
 
 // Q3.
 
@@ -27,4 +30,33 @@ div.classList.add('box');
 div.append(h1);
 div.append(p2);
 
-document.querySelector('body').prepend(div);
+body.prepend(div);
+
+// Assignment Questions
+
+// Q1.
+
+let btn = document.createElement('button');
+btn.innerText = "Click me";
+
+body.prepend(btn);
+
+// Q2.
+
+btn.setAttribute('placeholder', 'username');
+btn.setAttribute('id', 'btn');
+
+// Q3.
+
+btn.classList.add('btn');
+
+// Q4.
+
+h1.classList.add('h1');
+
+// Q5.
+
+let p3 = document.createElement('p');
+p3.innerHTML = "Hii my name is <b>Ujjwal</b>";
+
+body.append(p3);

@@ -14,3 +14,13 @@
   background-color: pink;
   border: 2px solid;
 }
+
+.btn {
+  background-color: blue;
+  color: white;
+}
+
+.h1 {
+  text-decoration: green underline ;
+  color: purple;
+}
