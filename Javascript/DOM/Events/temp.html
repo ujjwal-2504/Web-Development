@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 id="userNameHeading">Your name will appear here</h2>
+
+    <input type="text" id="nameInput" placeholder="Enter your name">
+
+    <script>
+        const inputElement = document.getElementById('nameInput');
+        const headingElement = document.getElementById('userNameHeading');
+
+        inputElement.addEventListener('input', function() {
+            // Allow only letters (a-z, A-Z) and spaces
+            let filteredValue = inputElement.value.replace(/[^a-zA-Z\s]/g, '');
+            inputElement.value = filteredValue; // Update input field with filtered value
+            headingElement.textContent = filteredValue ? filteredValue : 'Your name will appear here';
+        });
+    </script>
+
+</body>
+</html>

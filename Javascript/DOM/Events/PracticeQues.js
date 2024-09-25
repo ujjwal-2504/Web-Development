@@ -46,6 +46,8 @@ let inp2 = document.querySelector('#inp2');
 
 inp2.addEventListener('input', function() {
 
-  if(inp2.value >= 'a' && inp2.value <= 'z' || inp2.value >= 'A' && inp2.value <= 'Z' || inp.value == ' ')
-  h2.innerText = inp2.value;
+  let filterValue = inp2.value.replace(/[^a-z A-Z \s]/g, '');
+  inp.value = filterValue;
+  h2.innerText = filterValue ? filterValue : "Enter Your Name";
+
 });
