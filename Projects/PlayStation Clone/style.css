@@ -512,12 +512,21 @@ nav {
 
 .play-plus-card-container {
   display: flex;
+  gap: 1rem;
+  width: 100%;
+  overflow-x: scroll;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; 
+  /* transition: all 0.5s ease-in-out; */
 }
 
 .play-plus-card {
   background-image: url(./Assets/spiderman.jpg);
+  cursor: pointer;
   background-size: cover;
-
+  /* box-sizing: border-box; */
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   height: 16rem;
@@ -526,8 +535,11 @@ nav {
   align-items: start;
   justify-content: end;
   border-radius: 1rem;
-  width: 60%;
+  width: 50vw;
+
+  scroll-snap-align: center;
 }
+
 
 .plus-card-options {
   /* border: 2px solid white; */
