@@ -110,3 +110,26 @@ function reset() {
   userSeq = [];
   level = 0;
 }
+
+let numBtn = document.querySelector('#numbers');
+
+let clicked = false;
+
+numBtn.addEventListener('click', function() {
+
+  clicked = !clicked;
+  console.log(clicked);
+
+  if(clicked) {
+    let i = 1;
+    for(btn of allBtns) {
+      btn.innerText = i;
+      i++;
+    }
+  }
+  else {
+    for(btn of allBtns) {
+      btn.innerText = '';
+    }
+  }
+});

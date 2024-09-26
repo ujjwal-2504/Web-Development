@@ -1,5 +1,7 @@
 body {
   text-align: center;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .btn-container {
@@ -23,8 +25,12 @@ body {
 .btn {
   height: 10rem;
   width: 10rem;
-  border: 0.5rem solid;
+  border: 0.5rem solid #000000;
   border-radius: 20%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -50,4 +56,11 @@ body {
 
 .userFlash {
   background-color: green;
+}
+
+#numbers {
+  position: absolute;
+  right: -3rem;
+  bottom: 2px;
+  transform: rotate(90deg);
 }
