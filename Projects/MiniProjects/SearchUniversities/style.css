@@ -1,0 +1,30 @@
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+
+body {
+  
+  background-color: black;
+  color: white;
+  justify-content: space-evenly;
+}
+div {
+  display: flex;
+  border: 2px solid;
+}
+
+section {
+  /* display: flex; */
+  border: 2px solid white;
+  text-align: center;
+}
+
+section h1 {
+  flex-direction: column;
+}
+
+#inner {
+  /* display: none; */
+}
