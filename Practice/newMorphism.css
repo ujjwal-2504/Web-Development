@@ -1,0 +1,32 @@
+body {
+  background-color: #e4e1e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.element {
+  border: none;
+  height: 150px;
+  width: 150px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.3s;
+
+
+  &:hover {
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
+    -10px -10px 10px white;
+    font-size: 1.05rem;
+  }
+  &:active {
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
+    -10px -10px 10px white inset;
+    font-size: 0.95rem;
+  }
+}
+
