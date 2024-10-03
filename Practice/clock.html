@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+
+</head>
+
+<style>
+
+  body {
+    background-color: #191414;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h2 {
+    color: white;
+  }
+
+  #clock {
+    background-color: #ffb300;
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+</style>
+
+
+<body class="flexCenter">
+  
+  <h2>Your local time</h2>
+  <div id="clock" class="flexCenter"></div>
+
+  <script src="clock.js"></script>
+</body>
+</html>
