@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: cornflowerblue;
+  width: 50%;
+  height: 100vh;
+  position: relative;
+}
+
+.title {
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 8rem;
+  height: 100%;
+  background-image: linear-gradient(to right, black , transparent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0 1rem;
+  transition: all ease 0.5s;
+  z-index: 100;
+}
+
+h3 {
+  text-align: center;
+  font-size: 2rem;
+  position: absolute;
+  text-decoration: solid underline;
+}
+
+
+#section1 #s1-card {
+  height: 450px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  
+}
+
+#section1 h3 {
+  top: 10%;
+  color: #100148;
+  
+}
+
+#section1 #s1-card img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem;
+}
+
+#section1 #s1-card h1 {
+  font-size: 30px;
+  margin: 10px 0;
+  font-weight: 900;
+}
+
+#section1 #s1-card h5 {
+  font-size: 25px;
+  color: red;
+  margin: 20px;
+}
+
+#section1 button {
+  background-color: cadetblue;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/* Section 2 */
+
+#section2 {
+  background-color: burlywood;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+#section2 .card {
+  height: 40%;
+  width: 300px;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+#section2 .card img {
+  height: 100%;
+  width: 100%;
+}
+
+.s2-card i {
+  font-size:75px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform ease 0.5s;
+  color: rgb(255, 0, 64);
+}
+
+/* section 3 */
+
+#section3 {
+  background-color: #c98eff;
+  color: rgb(252, 0, 0);
+  width: 100%;
+  position: relative;
+
+  &:hover {
+    cursor: none;
+  }
+}
+
+.cursor {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: white;
+  mix-blend-mode: difference;
+  position: absolute;
+  transition: all ease 0.2s;
+}
+
+#section3 h1{
+  font-size: 8rem;
+  font-weight: 900;
+}
+
+/* Section 4 */
+
+#section4 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #111;
+  display: block;
+  color: white;
+}
+
+#section4 .elem {
+  height: 120px;
+  width: 100%;
+  /* background-color: red; */
+  border-bottom: 2px solid white;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#section4 .elem h1 {
+  font-size: 5rem;
+  position: relative;
+  z-index: 10;
+  mix-blend-mode: difference  ;
+}
+
+#section4 .elem img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  position: absolute;
+  /* transform: translate(-50%, -50%); */
+  opacity: 0;
+  transition: all linear 0.3s;
+}
+
+#section4 h3 {
+  position:unset;
+  margin: 2rem auto;
+  width: fit-content;
+  text-align: center;
+}
