@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+#card {
+  height: 500px;
+  width: 350px;
+  background-color: white;
+  border-radius: 15px;
+  border: 3px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+.stories {
+  height: 120px;
+  width: 100%;
+  padding: 15px;
+  border-bottom: 1px solid #dadada;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.story {
+  height: 90px;
+  width: 90px;
+  /* background-color: blue; */
+  border-radius: 50%;
+  border: 3px solid red;
+  overflow: hidden;
+
+  display: inline-block;
+  margin: 5px;
+}
+
+.story img {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 50%; */
+  object-fit: cover;
+  object-position: top;
+}
+
+#full-screen {
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  border-radius: inherit;
+  display: none;
+}
+
+#time {
+  height: 1%;
+  width: 90%;
+  background-color: #0000005b;
+  outline: auto;
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  border-radius: 10px;
+  display: flex;
+  display: none;
+}
+
+#line {
+  height: 100%;
+  width: 1%;
+  background-color: #ffffffb0;
+  border-radius: inherit;
+  animation-name: time;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes time {
+  
+  100% {
+    width: 100%;
+  }
+}
