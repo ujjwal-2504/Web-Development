@@ -25,6 +25,15 @@ router
     wrapAsync(listingController.createListing)
   );
 
+// Filter Route
+router.get("/filter/:category", async (req, res) => {
+  let { category } = req.params;
+  // console.log(category);
+
+  let filteredListings = await Listing.find({ category: category });
+  res.render("listings/category.ejs", { filteredListings });
+});
+
 // New Route
 router.get("/new", isLoggedIn, listingController.renderNewForm);
 

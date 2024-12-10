@@ -46,9 +46,9 @@ app.listen(port, () => {
   console.log(`app is listening on port ${port}`);
 });
 
-app.get("/", (req, res) => {
-  res.send("Hii, I am root");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hii, I am root");
+// });
 
 const sessionOptions = {
   secret: "mysupersecretecode",

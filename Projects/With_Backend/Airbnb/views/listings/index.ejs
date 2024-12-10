@@ -1,11 +1,141 @@
 <% layout("/layouts/boilerplate") %>
 <body>
   
-  <h2 class="mt-4 mb-3 text-center">All Listings</h2>
+  <style>
+    #filters {
+      display: flex;
+      gap: 2.5rem;
+      /* border: 2px solid; */
+    }
 
-  <!-- <form method="GET" action="/listings/new">
-    <button>Create new listing</button>
-  </form> -->
+    .filter {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin: 2rem 0 0;
+      opacity: 0.6;
+      /* border: 1px solid blue; */
+
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      &:hover > p {
+        border-bottom: 2px solid;
+      }
+    }
+
+    .filter p {
+      /* padding-bottom: 1rem; */
+      /* border: 2px solid black; */
+      font-size: 0.8rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid transparent;
+    }
+  </style>
+
+  <div id="filters">
+    <a href="/listings/filter/trending">
+      <div class="filter">
+        <i class="fa-solid fa-fire"></i>
+        <p>Trending</p>
+      </div>
+    </a>
+    
+    <a href="/listings/filter/room">
+      <div class="filter">
+        <i class="fa-solid fa-bed"></i>
+        <p>Rooms</p>
+      </div>
+    </a>
+
+    <a href="/listings/filter/mountains">
+      <div class="filter">
+        <i class="fa-solid fa-mountain-city"></i>
+        <p>Mountains</p>
+      </div>
+    </a>
+
+    <a href="/listings/filter/pool">
+      <div class="filter">
+        <i class="fa-solid fa-water-ladder"></i>
+        <p>Amazing pools</p>
+      </div>
+    </a>
+
+    <a href="/listings/filter/city">
+      <div class="filter">
+        <i class="fa-solid fa-city"></i>
+        <p>Top cities</p>
+      </div>
+    </a>
+
+    <a href="/listings/filter/mansion">
+      <div class="filter">
+        <i class="fa-solid fa-vihara"></i>
+        <p>Mansions</p>
+      </div>
+    </a>
+
+    <a href="/listings/filter/cabin">
+      <div class="filter">
+        <i class="fa-solid fa-house-flag"></i>
+        <p>Cabins</p>
+      </div>
+    </a>
+    
+
+    <a href="/listings/filter/treeHouse">
+      <div class="filter">
+        <i class="fa-solid fa-building-wheat"></i>
+        <p>Tree house</p>
+      </div>
+    </a>
+
+    <a href="/listings/filter/castle">
+      <div class="filter">
+        <i class="fa-solid fa-chess-rook"></i>
+        <p>Castles</p>
+      </div>
+    </a>
+
+    <a href="/listings/filter/camp">
+      <div class="filter">
+        <i class="fa-solid fa-campground"></i>
+        <p>Camping</p>
+      </div>
+    </a>
+
+    <a href="/listings/filter/farm">
+      <div class="filter">
+        <i class="fa-solid fa-tractor"></i>
+        <p>Farm</p>
+      </div>
+    </a>
+
+    <a href="/listings/filter/beach">
+      <div class="filter">
+        <i class="fa-solid fa-umbrella-beach"></i>
+        <p>Beach</p>
+      </div>
+    </a>
+
+    <a href="/listings/filter/arctic">
+      <div class="filter">
+        <i class="fa-solid fa-snowman"></i>
+        <p>Arctic</p>
+      </div>
+    </a>
+
+    <a href="/listings/filter/island">
+      <div class="filter">
+        <i class="fa-solid fa-arrow-up-from-water-pump"></i>
+        <p>Island</p>
+      </div>
+    </a>
+  </div>
+
   <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
     <% for(let listing of allListings) { %>
       <a href="/listings/<%=listing.id%>" class="listing-link">
@@ -14,7 +144,7 @@
         <div class="card-body">
           <p class="card-text">
             <p><b><%= listing.title %></b></p>
-            <p>&#8377;<%=  listing.price.toLocaleString("en-IN") %> / night</p>
+            <p>&#8377;<%= listing.price.toLocaleString("en-IN") %> / night</p>
           </p>
         </div>
         </div>
