@@ -30,7 +30,7 @@
   }
 </style>
 
-<nav class="navbar navbar-expand-sm bg-body-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"
       ><i class="fa-regular fa-compass"></i
@@ -49,7 +49,7 @@
       </div>
 
       <div class="navbar-nav ms-auto">
-        <form class="d-flex" role="search">
+        <form action="/listings/search" class="d-flex" role="search">
           <input
             class="form-control me-2 search-bar"
             type="search"
@@ -65,11 +65,11 @@
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">Airbnb your home</a>
         <% if(!currUser) { %>
-        <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-        <a class="nav-link" href="/login"><b>Log in</b></a>
+        <a class="nav-link" href="/user/signup"><b>Sign Up</b></a>
+        <a class="nav-link" href="/user/login"><b>Log in</b></a>
         <% } %> <% if(currUser) { %>
 
-        <div class="dropdown-center">
+        <div class="dropstart">
           <a
             class="btn btn-secondary dropdown-toggle"
             href="#"
@@ -82,7 +82,13 @@
           </a>
 
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/logout">Logo out</a></li>
+            <li class="dropdown-item">Email: <%= currUser.email %></li>
+            <li>
+              <a class="dropdown-item" href="/user/<%= currUser.username %>"
+                >Your listings</a
+              >
+            </li>
+            <li><a class="dropdown-item" href="/user/logout">Logo out</a></li>
           </ul>
         </div>
 

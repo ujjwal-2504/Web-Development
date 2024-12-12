@@ -92,7 +92,7 @@ app.use((req, res, next) => {
 
 app.use("/listings", listingRouter); // Listings routes
 app.use("/listings/:id/reviews", reviewRouter); // Reviews routes
-app.use("/", userRouter);
+app.use("/user", userRouter);
 
 // If any request is comming on non exsiting route.
 app.all("*", (req, res, next) => {

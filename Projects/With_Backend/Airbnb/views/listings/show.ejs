@@ -1,5 +1,11 @@
 <% layout("/layouts/boilerplate") %>
 
+<style>
+  a {
+    text-decoration: none;
+  }
+</style>
+
 <script>
   const mapToken = "<%= process.env.MAP_TOKEN %>";
   const listing = <%- JSON.stringify(data) %>;
@@ -18,8 +24,18 @@
       <div class="card-body show-card-body">
         <div class="top-part mt-3">
           <h3 class="card-title mb-2"><%= data.title%></h3>
-          <h6>Owend by <i><%= data.owner.username %></i></h6>
-          <h6>Category <i><%= data.category %></i></h6>
+          <h6>
+            Owend by
+            <a href="/user/<%= data.owner.username %>"
+              ><i><%= data.owner.username %></i></a
+            >
+          </h6>
+          <h6>
+            Category:
+            <a href="/listings/filter/<%= data.category %>"
+              ><i><%= data.category %></i></a
+            >
+          </h6>
           <p class="card-text fs-5 mt-3"><%= data.description%></p>
         </div>
 

@@ -41,6 +41,12 @@ router.get("/filter/:category", async (req, res) => {
 // New Route
 router.get("/new", isLoggedIn, listingController.renderNewForm);
 
+//Search
+router.get("/search", (req, res) => {
+  req.flash("warning", `The search feature will be implemented soon`);
+  res.redirect("/listings");
+});
+
 router
   .route("/:id")
   // Show Route
