@@ -30,10 +30,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 
-const dbUrl = process.env.ATLASDB_URL;
+// const dbUrl = process.env.ATLASDB_URL;
+mongoUrl = process.env.MONGO_DB_URL;
 
 async function main() {
-  await mongoose.connect(dbUrl);
+  await mongoose.connect(mongoUrl);
 }
 
 main()
@@ -44,7 +45,7 @@ main()
     console.log(err);
   });
 
-const port = 8080;
+const port = 3000;
 app.listen(port, () => {
   console.log(`app is listening on port ${port}`);
 });
@@ -53,20 +54,20 @@ app.listen(port, () => {
 //   res.send("Hii, I am root");
 // });
 
-const store = MongoStore.create({
-  mongoUrl: dbUrl,
-  crypto: {
-    secret: process.env.SECRET,
-  },
-  touchAfter: 24 * 3600,
-});
+// const store = MongoStore.create({
+//   mongoUrl: dbUrl,
+//   crypto: {
+//     secret: process.env.SECRET,
+//   },
+//   touchAfter: 24 * 3600,
+// });
 
-store.on("error", () => {
-  console.log("Error in MONGO SESSION STORE", err);
-});
+// store.on("error", () => {
+//   console.log("Error in MONGO SESSION STORE", err);
+// });
 
 const sessionOptions = {
-  store,
+  // store,
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,

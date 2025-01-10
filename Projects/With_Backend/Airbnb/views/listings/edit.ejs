@@ -105,9 +105,9 @@
       </div>
 
       <div class="dropdown mb-3">
-        <label for="category">Select a category: </label>
+        <label for="category">Change category: </label>
         <select name="listing[category]" id="category" class="custom-select">
-          <option value="room" selected>Room</option>
+          <option value="room">Room</option>
           <option value="mountains">Mountains</option>
           <option value="pool">Pool</option>
           <option value="city">City</option>
@@ -127,3 +127,13 @@
     </form>
   </div>
 </div>
+
+<script>
+  const options = document.getElementsByClassName("custom-select")[0].options;
+  for (option of options) {
+    if (option.value === "<%=data.category%>") {
+      option.selected = true; // This selects current category
+      break;
+    }
+  }
+</script>

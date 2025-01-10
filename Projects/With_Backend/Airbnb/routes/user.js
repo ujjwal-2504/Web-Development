@@ -35,6 +35,10 @@ router.get("/:username", async (req, res) => {
   const owner = await User.findOne({ username: username });
   const ownerId = owner._id;
   const allListings = await Listing.find({ owner: ownerId });
+  if (!allListings.length) {
+    req.flash("warning", `${username} don't owned any listing`);
+    return res.redirect("/listings");
+  }
   // console.log(allListings);
   owned = { owner: username };
   res.render("listings/owned-listings.ejs", { allListings, owned });
