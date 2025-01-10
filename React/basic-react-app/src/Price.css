@@ -1,0 +1,13 @@
+.Price {
+  background-color: #c7b95b;
+  margin-bottom: 0;
+  border-radius: 0 0 10px 10px;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+}
+
+.newPrice {
+  font-weight: bold;
+}

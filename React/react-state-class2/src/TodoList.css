@@ -1,0 +1,62 @@
+.main {
+  /* border: 2px solid white; */
+  padding: 1rem;
+  margin-top: 2rem;
+  box-shadow: 1rem 1rem 1rem 1rem black;
+}
+
+.center {
+  text-align: center;
+}
+
+.add {
+  height: 2rem;
+  margin: 1rem;
+}
+
+input {
+  height: 2rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0 0.5rem;
+}
+
+.list {
+  /* outline: 1px solid white; */
+  padding-left: 0;
+}
+
+.task {
+  /* border: 1px solid white; */
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  text-align: left;
+  min-width: fit-content;
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.2rem;
+}
+
+.list > li::before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  color: #fff;
+}
+
+.btnContainer > button,
+.smallBtn {
+  font-size: 0.8rem;
+  padding: 0 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.dull {
+  text-decoration: line-through white;
+  color: #868686;
+  border-bottom: 1px solid #868686;
+}

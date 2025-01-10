@@ -1,0 +1,12 @@
+.ProductTab {
+  border: 2px solid white;
+  background-color: #959595;
+  color: black;
+  padding: 0rem 1rem;
+}
+
+.AllProducts {
+  display: flex;
+  gap: 0.7rem;
+  flex: 1;
+}

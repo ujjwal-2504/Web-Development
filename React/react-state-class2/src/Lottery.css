@@ -1,0 +1,27 @@
+.Lottery {
+  text-align: center;
+}
+
+.ticket {
+  border: 2px solid white;
+  font-size: 3rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  height: 4.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.ticket::before {
+  content: "";
+  position: absolute;
+  height: 85%;
+  width: 97%;
+  top: 3px;
+  border: 2px solid yellow;
+  border-radius: 8px;
+}
