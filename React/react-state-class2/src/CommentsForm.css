@@ -1,0 +1,43 @@
+form {
+  border: 2px solid white;
+  /* text-align: center; */
+  padding: 1rem;
+}
+
+button {
+  font-size: 1.5rem;
+}
+
+input {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+textarea {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  width: 95%;
+  height: 10rem;
+}
+
+label {
+  text-align: start;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+#rating {
+  width: 50%;
+  text-align: center;
+}
+
+#username {
+  /* width: 90%; */
+  padding: 0.2rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
