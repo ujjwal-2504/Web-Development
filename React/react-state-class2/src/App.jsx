@@ -6,6 +6,7 @@ import Lottery from "./Lottery";
 import { sum } from "./helper.js";
 import Form from "./Form.jsx";
 import CommentsForm from "./CommentsForm.jsx";
+import Comment from "./Comment.jsx";
 
 // let winCondition = (ticket) => {
 //     // return sum(ticket) === 15; // First winning condition
@@ -17,7 +18,8 @@ import CommentsForm from "./CommentsForm.jsx";
 function App() {
   return (
     <div className="App">
-      <CommentsForm />
+      {/* <CommentsForm /> */}
+      <Comment />
     </div>
   );
 }
