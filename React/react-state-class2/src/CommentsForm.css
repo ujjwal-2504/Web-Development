@@ -34,6 +34,7 @@ label {
 #username {
   /* width: 90%; */
   padding: 0.2rem;
+  margin-bottom: 0;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

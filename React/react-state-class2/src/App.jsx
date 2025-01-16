@@ -7,6 +7,8 @@ import { sum } from "./helper.js";
 import Form from "./Form.jsx";
 import CommentsForm from "./CommentsForm.jsx";
 import Comment from "./Comment.jsx";
+import Counter from "./Counter.jsx";
+import Joker from "./Joker.jsx";
 
 // let winCondition = (ticket) => {
 //     // return sum(ticket) === 15; // First winning condition
@@ -19,7 +21,9 @@ function App() {
   return (
     <div className="App">
       {/* <CommentsForm /> */}
-      <Comment />
+      {/* <Comment /> */}
+      {/* <Counter /> */}
+      <Joker />
     </div>
   );
 }
