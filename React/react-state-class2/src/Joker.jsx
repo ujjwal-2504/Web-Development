@@ -21,7 +21,7 @@ export default function Joker() {
   }, []);
 
   return (
-    <div>
+    <div style={{ padding: "1rem" }}>
       <h1>
         <b>{joke.setup}</b>
       </h1>
