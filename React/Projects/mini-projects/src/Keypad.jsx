@@ -1,7 +1,8 @@
 import Key from "./Key";
+
 function Keypad({ operations }) {
   return (
-    <div className="Keypad flex flex-wrap w-80">
+    <div className="Keypad flex flex-wrap gap-1 w-[19rem] justify-center">
       <Key value="C" operation={operations.clear} />
       <Key value="/" operation={operations.display} />
       <Key value="*" operation={operations.display} />
@@ -17,8 +18,8 @@ function Keypad({ operations }) {
       <Key value="8" operation={operations.display} />
       <Key value="9" operation={operations.display} />
       <Key value="." operation={operations.display} />
-      <Key value="=" operation={operations.calculate} />
       <Key value="<-" operation={operations.remove} />
+      <Key value="=" operation={operations.calculate} />
     </div>
   );
 }
