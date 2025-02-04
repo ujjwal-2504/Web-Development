@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 
-export const Login = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,28 +22,33 @@ export const Login = () => {
 
   return (
     <div className="flex justify-center items-center h-screen w-screen">
-      <div className="border-2 p-20 border-emerald-600 rounded-xl">
+      <div className=" bg-[#1c1c1c] border-2 border-emerald-600 rounded-xl w-1/3 py-10 ">
         <form
-          className="flex flex-col items-center justify-center gap-2"
+          className="flex flex-col items-center justify-center gap-4"
           onSubmit={(e) => HandleSubmit(e)}
         >
-          <input
-            required
-            className=" text-white px-5 py-3 border-2 border-amber-200 rounded-full outline-none  text-xl"
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => HandleChange(e)}
-          />
-          <input
-            required
-            className=" text-white px-5 py-3 border-2 border-amber-200 rounded-full outline-none  text-xl"
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => HandleChange(e)}
-          />
-          <button className=" text-white px-4 py-2 mt-2 bg-emerald-700 rounded-full outline-none">
+          <h1 className="text-4xl text-white font-bold w-full text-start px-6 mb-10">
+            Log In
+          </h1>
+          <div className="px-5">
+            <input
+              required
+              className=" text-white px-5 py-3 border-2 border-green-600 rounded-full outline-none mb-2 text-xl  w-full"
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => HandleChange(e)}
+            />
+            <input
+              required
+              className=" text-white px-5 py-3 border-2 border-green-600 rounded-full outline-none text-xl  w-full"
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => HandleChange(e)}
+            />
+          </div>
+          <button className=" text-white px-4 py-2 text-xl bg-emerald-700 rounded-full outline-none w-7/10">
             Login
           </button>
         </form>
@@ -50,3 +56,5 @@ export const Login = () => {
     </div>
   );
 };
+
+export default Login;
