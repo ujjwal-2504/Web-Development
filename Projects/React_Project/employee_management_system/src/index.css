@@ -8,3 +8,18 @@ body {
 #taskList::-webkit-scrollbar {
   display: none;
 }
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: inset -3px 0 #555, inset 3px 0 #555;
+}
+
+body::-webkit-scrollbar-track {
+  background: #555;
+  border-radius: 10px;
+}

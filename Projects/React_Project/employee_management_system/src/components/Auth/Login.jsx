@@ -1,15 +1,15 @@
 import React from "react";
 import { useState } from "react";
 
-const Login = () => {
+const Login = ({ auth }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const HandleSubmit = (e) => {
     e.preventDefault();
+    auth(email, password);
     setEmail("");
     setPassword("");
-    console.log("Form is submmited");
   };
 
   const HandleChange = (e) => {

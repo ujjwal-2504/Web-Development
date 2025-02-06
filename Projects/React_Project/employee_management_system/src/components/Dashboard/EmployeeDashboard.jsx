@@ -3,13 +3,13 @@ import Header from "../Others/Header";
 import TaskListBlocks from "../Others/TaskListBlocks";
 import TaskList from "../TaskList/TaskList";
 
-const EmployeeDashboard = () => {
+const EmployeeDashboard = ({ data }) => {
   return (
     <div>
-      <div className="p-10 h-screen">
-        <Header />
-        <TaskListBlocks />
-        <TaskList />
+      <div className="px-10 py-5 h-screen">
+        <Header data={data} />
+        <TaskListBlocks data={data.taskNumbers} />
+        <TaskList data={data.tasks} />
       </div>
     </div>
   );

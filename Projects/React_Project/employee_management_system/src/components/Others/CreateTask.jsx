@@ -47,7 +47,6 @@ const CreateTask = () => {
         <div className="flex flex-col w-[45%] text-lg">
           <label htmlFor="description">Description: </label>
           <textarea
-            name="desc"
             id="description"
             cols="30"
             rows="7"
