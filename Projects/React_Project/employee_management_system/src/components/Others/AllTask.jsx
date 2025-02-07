@@ -25,9 +25,12 @@ const AllTask = () => {
       </div>
 
       <div className="h-8/10 flex flex-col gap-2">
-        {authData.employees.map(function (employee) {
+        {authData.employees.map(function (employee, idx) {
           return (
-            <div className="border-3 border-green-900 py-2 px-4 flex justify-between rounded-lg">
+            <div
+              key={idx}
+              className="border-3 border-green-900 py-2 px-4 flex justify-between rounded-lg"
+            >
               <h2 className="flex-1 text-xl font-medium">
                 {employee.firstName}
               </h2>

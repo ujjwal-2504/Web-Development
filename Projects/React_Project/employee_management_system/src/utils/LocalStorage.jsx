@@ -269,6 +269,7 @@ const admins = [
     gender: "Male",
     email: "vikram.singh@example.com",
     password: "123",
+    employeesIds: [1, 2, 3, 4, 5],
   },
 ];
 
