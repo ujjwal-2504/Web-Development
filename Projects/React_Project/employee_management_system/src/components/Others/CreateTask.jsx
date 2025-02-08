@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { getLocalStorage } from "../../utils/LocalStorage";
 
-const CreateTask = () => {
+const CreateTask = ({ setUserData }) => {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [taskDate, setTaskDate] = useState("");
   const [assignTo, setAssignTo] = useState("");
   const [category, setCategory] = useState("");
+  let newTask = {};
 
   function createTask(title, description, date, category) {
-    setTask({
+    newTask = {
       title: title,
       description: description,
       date: date,
@@ -18,16 +19,16 @@ const CreateTask = () => {
       newTask: true,
       completed: false,
       failed: false,
-    });
+    };
   }
 
   function searchEmployee(name) {
-    const { employees } = getLocalStorage();
-    const emp = employees.find((emp) => {
+    const { employees, admin } = getLocalStorage();
+    const targetEmployee = employees.find((emp) => {
       return emp.firstName === name;
     });
 
-    return emp;
+    return { targetEmployee, employees, admin };
   }
 
   function resetForm() {
@@ -36,21 +37,20 @@ const CreateTask = () => {
     setTaskDate("");
     setAssignTo("");
     setCategory("");
-    setTask({});
+    newTask = {};
   }
-
-  const [task, setTask] = useState({});
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const targetEmployee = searchEmployee(assignTo);
+    const { targetEmployee, employees, admin } = searchEmployee(assignTo);
 
-    // if (targetEmployee) {
-    //   createTask(taskTitle, taskDescription, taskDate, category);
-    //   targetEmployee.tasks.push(task);
-    //   targetEmployee.taskNumbers.newTask++;
-    //   console.log(targetEmployee);
-    // }
+    if (targetEmployee) {
+      createTask(taskTitle, taskDescription, taskDate, category);
+      targetEmployee.tasks.push(newTask);
+      targetEmployee.taskNumbers.newTask++;
+      localStorage.setItem("employees", JSON.stringify(employees));
+      setUserData({ employees, admin });
+    }
 
     resetForm();
   };

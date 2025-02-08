@@ -34,3 +34,7 @@ body {
   background: #555;
   border-radius: 10px;
 }
+
+input[type="date"] {
+  color-scheme: light dark;
+}

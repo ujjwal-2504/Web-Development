@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 
-const Header = ({ data }) => {
-  // const [username, setUsername] = useState("");
+const Header = ({ data, changeUser }) => {
+  let user;
 
-  // if (!data) setUsername("Admin");
-  // else setUsername(data.firstName);
+  if (data) user = data.firstName;
+  else user = "Admin";
 
   const logOut = () => {
     localStorage.setItem("loggedInUser", "");
-    window.location.reload();
+    changeUser(null);
   };
 
   return (
     <div className="flex items-center justify-between bg-[#1c1c1c] rounded-xl py-3 px-4">
       <h1 className="text-2xl font-medium">
-        Hello, <span className="text-3xl font-semibold">Admin 👋</span>
+        Hello, <span className="text-3xl font-semibold">{user} 👋</span>
       </h1>
       <button
         onClick={logOut}

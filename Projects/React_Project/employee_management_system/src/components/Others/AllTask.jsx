@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 
 const AllTask = () => {
-  const authData = useContext(AuthContext);
+  const { userData } = useContext(AuthContext);
 
   return (
     <div className="bg-zinc-900 p-5 mt-4 rounded-lg flex flex-col gap-2">
@@ -25,7 +25,7 @@ const AllTask = () => {
       </div>
 
       <div className="h-8/10 flex flex-col gap-2">
-        {authData.employees.map(function (employee, idx) {
+        {userData.employees.map(function (employee, idx) {
           return (
             <div
               key={idx}
