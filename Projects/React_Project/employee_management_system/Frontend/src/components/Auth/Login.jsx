@@ -4,10 +4,12 @@ import { useState } from "react";
 const Login = ({ auth }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userData, setUserData] = useState({});
 
   const HandleSubmit = (e) => {
     e.preventDefault();
-    auth(email, password);
+    setUserData({ email: email, password: password });
+    console.log(userData);
     setEmail("");
     setPassword("");
   };

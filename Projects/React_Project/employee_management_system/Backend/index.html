@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Backend data</title>
+  </head>
+  <body>
+    <h1>Jokes:</h1>
+    <div id="display">Loding...</div>
+
+    <script>
+      fetch("http://localhost:3000/api/jokes")
+        .then((res) => res.json())
+        .then((jokes) => {
+          document.getElementById("display").innerHTML = jokes.map(
+            (joke) =>
+              `<div> <h2>${joke.title}</h2> <h3> ${joke.content} </h3> </div>`
+          );
+        })
+        .catch((err) => console.log(err));
+    </script>
+  </body>
+</html>

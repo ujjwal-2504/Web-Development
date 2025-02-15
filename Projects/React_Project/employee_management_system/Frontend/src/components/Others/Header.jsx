@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 
 const Header = ({ data, changeUser }) => {
-  let user;
+  let user = "User";
 
   if (data) user = data.firstName;
-  else user = "Admin";
 
   const logOut = () => {
     localStorage.setItem("loggedInUser", "");
     changeUser(null);
+    user = "User";
   };
 
   return (
-    <div className="flex items-center justify-between bg-[#1c1c1c] rounded-xl py-3 px-4">
+    <div className="flex items-center justify-between bg-[#1c1c1c] py-3 px-4">
       <h1 className="text-2xl font-medium">
         Hello, <span className="text-3xl font-semibold">{user} 👋</span>
       </h1>
