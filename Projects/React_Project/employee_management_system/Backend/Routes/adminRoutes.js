@@ -1,17 +1,17 @@
 import express from "express";
 import { body } from "express-validator";
-import { authEmployee } from "../middlewares/authMiddleware.js";
+import { authAdmin } from "../middlewares/authMiddleware.js";
 import {
-  newEmployee,
-  loginEmployee,
-  getEmployeeProfile,
-  logoutEmployee,
-} from "../controllers/employee.controller.js";
+  registerAdmin,
+  loginAdmin,
+  getAdminProfile,
+  logoutAdmin,
+} from "../controllers/admin.controller.js";
 
 const router = express.Router();
 
 router.post(
-  "/new",
+  "/register",
   [
     body("email").isEmail().withMessage("Invalid Email"),
     body("firstName")
@@ -24,7 +24,7 @@ router.post(
       .isLength({ min: 6 })
       .withMessage("Password must be at least 6 characters long"),
   ],
-  newEmployee
+  registerAdmin
 );
 
 router.post(
@@ -35,11 +35,11 @@ router.post(
       .isLength({ min: 6 })
       .withMessage("Password must be at least 6 characters long"),
   ],
-  loginEmployee
+  loginAdmin
 );
 
-router.get("/profile", authEmployee, getEmployeeProfile);
+router.get("/profile", authAdmin, getAdminProfile);
 
-router.get("/logout", authEmployee, logoutEmployee);
+router.get("/logout", authAdmin, logoutAdmin);
 
 export default router;

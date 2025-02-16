@@ -1,12 +1,22 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 //Schema
-const employeeData = new mongoose.Schema({
-  firstName: { type: String, requried: true },
-  lastName: { type: String, requried: true },
+const employeeSchema = new mongoose.Schema({
+  firstName: {
+    type: String,
+    requried: true,
+    minlength: [3, "First name must be at least 3 character long"],
+  },
+  lastName: {
+    type: String,
+    requried: true,
+    minlength: [3, "Last name must be at least 3 character long"],
+  },
   gender: { type: String, requried: true },
   email: { type: String, requried: true, unique: true },
-  password: { type: String, requried: true },
+  password: { type: String, requried: true, select: false },
   tasks: [
     {
       title: String,
@@ -27,7 +37,23 @@ const employeeData = new mongoose.Schema({
   },
 });
 
-// model
-const Employee = mongoose.model("Employee", employeeData);
+employeeSchema.methods.generateAuthToken = function () {
+  const token = jwt.sign({ _id: this.id }, process.env.JWT_SECRET, {
+    expiresIn: "24h",
+  });
+  return token;
+};
 
-export default Employee;
+employeeSchema.methods.comparePassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
+
+employeeSchema.statics.hashPassword = async function (password) {
+  const salt = bcrypt.genSaltSync(10);
+  return await bcrypt.hash(password, salt);
+};
+
+// model
+const employeeModel = mongoose.model("Employee", employeeSchema);
+
+export default employeeModel;

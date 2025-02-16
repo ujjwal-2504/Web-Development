@@ -1,10 +1,10 @@
-import express from "express";
+import express, { urlencoded } from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import { configDotenv } from "dotenv";
-import Employee from "./Models/employeeModel.js";
-import Admin from "./Models/adminModel.js";
+import cookieParser from "cookie-parser";
 import employeeRoutes from "./Routes/employeeRoutes.js";
+import adminRoutes from "./Routes/adminRoutes.js";
 configDotenv();
 
 // Database and server--------------------------------------------
@@ -16,6 +16,8 @@ async function main() {
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 const port = process.env.PORT || 3000;
 
@@ -31,7 +33,7 @@ main()
 // Routes-----------------------------------------
 
 app.get("/", (req, res) => {
-  res.redirect("/login");
+  res.send("Hello");
 });
 
 app.get("/api/jokes", (req, res) => {
@@ -66,3 +68,4 @@ app.get("/api/jokes", (req, res) => {
 });
 
 app.use("/employee", employeeRoutes);
+app.use("/admin", adminRoutes);
