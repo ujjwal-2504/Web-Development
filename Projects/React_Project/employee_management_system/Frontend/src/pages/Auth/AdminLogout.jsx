@@ -16,7 +16,6 @@ const AdminLogout = () => {
       .then((response) => {
         if (response.status === 200) {
           localStorage.removeItem("token");
-          console.log(response);
           navigate("/");
         }
       });

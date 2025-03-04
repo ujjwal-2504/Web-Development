@@ -35,6 +35,7 @@ export default function AdminLogin() {
       if (response.status === 200) {
         const data = response.data;
         setToken(data.token);
+        setAdminData(data);
         navigate("/admin");
       }
     } catch (err) {

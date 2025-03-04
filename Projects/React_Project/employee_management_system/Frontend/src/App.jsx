@@ -14,6 +14,9 @@ import EmployeeProtectedWrapper from "./pages/Auth/EmployeeProtectedWrapper";
 import EmployeeLogout from "./pages/Auth/EmployeeLogout";
 import AdminProtectedWrapper from "./pages/Auth/AdminProtectedWrapper";
 
+// Test section
+import AllTask from "./components/Others/AllTask";
+
 const App = () => {
   return (
     <div>
@@ -28,6 +31,7 @@ const App = () => {
           }
         />
         <Route path="/employee/new" element={<NewEmployee />} />
+        <Route path="/employee/all-tasks" element={<AllTask />} />
         <Route path="/employee/login" element={<EmployeeLogin />} />
         <Route path="/employee/logout" element={<EmployeeLogout />} />
         <Route

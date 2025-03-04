@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../../context/AuthProvider";
 
 const AllTask = () => {
-  const { userData } = useContext(AuthContext);
+  // const { userData } = useContext(AuthContext);
 
   return (
     <div className="bg-zinc-900 p-5 mt-4 rounded-lg flex flex-col gap-2">

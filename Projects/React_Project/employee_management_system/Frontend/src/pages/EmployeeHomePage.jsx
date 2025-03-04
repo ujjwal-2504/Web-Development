@@ -1,18 +1,27 @@
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent } from "../components/ui/Card";
 import { Briefcase, Users, PlusCircle } from "lucide-react";
 import Navbar from "../components/Others/Navbar";
-import HeroSection from "../components/Others/HeroSection";
+import { EmployeeDataContext } from "../context/EmployeeContext";
 
 export default function EmployeeHomePage() {
+  const { employee } = useContext(EmployeeDataContext);
+
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
       <Navbar who="employee" />
 
-      {/* Hero Section */}
-      <HeroSection />
+      {/* Display Employee Information */}
+      <div className="container mx-auto p-8 text-black">
+        <h1 className="text-2xl font-bold">
+          Welcome, {employee.firstName} {employee.lastName}
+        </h1>
+        <p className="text-gray-600">Email: {employee.email}</p>
+        <p className="text-gray-600">Gender: {employee.gender}</p>
+      </div>
 
       {/* Quick Links */}
       <div className="container mx-auto p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

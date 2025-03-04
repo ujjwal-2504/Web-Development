@@ -51,7 +51,6 @@ export default function RegisterAdmin() {
         localStorage.setItem("token", data.token);
         navigate("/admin");
       }
-      console.log(response);
     } catch (error) {
       console.error("Error during admin registration:", error);
     }

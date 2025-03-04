@@ -26,7 +26,7 @@ const EmployeeProtectedWrapper = ({ children }) => {
     })
     .then((response) => {
       if (response.status === 200) {
-        setAdminData(response.data.employee);
+        setEmployee(response.data);
         setIsLoading(false);
       }
     })
