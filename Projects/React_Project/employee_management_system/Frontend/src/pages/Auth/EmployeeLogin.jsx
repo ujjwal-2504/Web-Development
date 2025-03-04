@@ -1,18 +1,39 @@
-import { Link } from "react-router-dom";
-import { Button } from "../ui/Button";
-import { Card, CardContent } from "../ui/Card";
-import { useState } from "react";
-import Navbar from "../Others/Navbar";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../../components/ui/Button";
+import { Card, CardContent } from "../../components/ui/Card";
+import { useState, useContext } from "react";
+import Navbar from "../../components/Others/Navbar";
+import axios from "axios";
+import { EmployeeDataContext } from "../../context/EmployeeContext";
 
 export default function EmployeeLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [employeeData, setEmployeeData] = useState({});
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+  const { employee, setEmployee } = useContext(EmployeeDataContext);
+
+  const resetForm = () => {
+    setEmail("");
+    setPassword("");
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setEmployeeData({ email: email, password: password });
-    // Add authentication logic here
+
+    const employeeData = { email: email, password: password };
+    const response = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/employee/login`,
+      employeeData
+    );
+
+    if (response.status === 200) {
+      const data = response.data;
+      setEmployee(data.employee);
+      localStorage.setItem("token", data.token);
+      resetForm();
+      navigate("/employee");
+    }
   };
 
   return (

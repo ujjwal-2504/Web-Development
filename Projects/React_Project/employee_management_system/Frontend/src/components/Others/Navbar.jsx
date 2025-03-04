@@ -9,8 +9,8 @@ function Navbar({ who }) {
       </Link>
       {who && (
         <div>
-          <Link to={`/${who}/login`} className="mr-4">
-            Login
+          <Link to={`/${who}/logout`} className="mr-4">
+            Logout
           </Link>
         </div>
       )}

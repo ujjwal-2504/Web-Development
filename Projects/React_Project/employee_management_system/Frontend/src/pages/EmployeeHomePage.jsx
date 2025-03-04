@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent } from "../components/ui/Card";
 import { Briefcase, Users, PlusCircle } from "lucide-react";
@@ -9,7 +9,7 @@ export default function EmployeeHomePage() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
-      <Navbar who={"employee"} />
+      <Navbar who="employee" />
 
       {/* Hero Section */}
       <HeroSection />
@@ -43,7 +43,7 @@ export default function EmployeeHomePage() {
         <Card>
           <CardContent className="p-6 flex flex-col items-center text-center">
             <PlusCircle size={40} className="text-purple-600 mb-4" />
-            <h3 className="text-xl font-semibold">Tasks</h3>
+            <h3 className="text-xl font-semibold text-neutral-800">Tasks</h3>
             <p className="text-gray-600">Your tasks and task status</p>
             <Button asChild className="mt-4">
               <Link to="/add-employee">View My Tasks</Link>

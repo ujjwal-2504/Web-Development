@@ -50,7 +50,7 @@ export default function AdminHomePage() {
             </h3>
             <p className="text-gray-600">Quickly add a new employee.</p>
             <Button asChild className="mt-4">
-              <Link to="/new/employee">Add Employee</Link>
+              <Link to="/employee/new">Add Employee</Link>
             </Button>
           </CardContent>
         </Card>

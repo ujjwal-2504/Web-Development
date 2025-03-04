@@ -1,18 +1,47 @@
-import { Link } from "react-router-dom";
-import { Button } from "../ui/Button";
-import { Card, CardContent } from "../ui/Card";
-import { useState } from "react";
-import Navbar from "../Others/Navbar";
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "../../components/ui/Button";
+import { Card, CardContent } from "../../components/ui/Card";
+import React, { useState } from "react";
+import Navbar from "../../components/Others/Navbar";
+import axios from "axios";
+import AdminContext, { AdminDataContext } from "../../context/AdminContext";
+import setToken from "../../utils/setToken";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [adminData, setAdminData] = useState({});
 
-  const handleSubmit = (e) => {
+  const { adminData, setAdminData } = React.useContext(AdminDataContext);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setAdminData({ email: email, password: password });
-    // Add authentication logic here
+    const admin = {
+      email: email,
+      password: password,
+    };
+
+    function resetForm() {
+      setEmail("");
+      setPassword("");
+    }
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/admin/login`,
+        admin
+      );
+
+      if (response.status === 200) {
+        const data = response.data;
+        setToken(data.token);
+        navigate("/admin");
+      }
+    } catch (err) {
+      console.error("Error during admin login:", err);
+    }
+
+    resetForm();
   };
 
   return (
@@ -55,6 +84,12 @@ export default function AdminLogin() {
               </Button>
             </form>
           </CardContent>
+          <div className="text-black text-center">
+            New Here?{" "}
+            <Link className="text-blue-700 font-bold" to="/admin/register">
+              Register as Admin
+            </Link>
+          </div>
         </Card>
       </div>
     </div>

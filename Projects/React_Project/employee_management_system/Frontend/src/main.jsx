@@ -3,14 +3,17 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
-import UserContext from "./context/UserContext.jsx";
+import EmployeeContext from "./context/EmployeeContext.jsx";
+import AdminContext from "./context/AdminContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <UserContext>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </UserContext>
+    <AdminContext>
+      <EmployeeContext>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </EmployeeContext>
+    </AdminContext>
   </StrictMode>
 );

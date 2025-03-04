@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { Button } from "../ui/Button";
-import { Card, CardContent } from "../ui/Card";
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "../../components/ui/Button";
+import { Card, CardContent } from "../../components/ui/Card";
 import { useState } from "react";
-import Navbar from "../Others/Navbar";
+import Navbar from "../../components/Others/Navbar";
 import axios from "axios";
 
 export default function NewEmployeeForm() {
@@ -14,20 +14,12 @@ export default function NewEmployeeForm() {
     password: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const newEmployee = formData;
-
-    const response = await axios.post(
-      `${import.meta.env.VITE_BASE_URL}/employee`,
-      newEmployee
-    );
-
+  const resetForm = () =>
     setFormData({
       firstName: "",
       lastName: "",
@@ -35,6 +27,22 @@ export default function NewEmployeeForm() {
       email: "",
       password: "",
     });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const newEmployee = formData;
+
+    const response = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/employee/new`,
+      newEmployee
+    );
+
+    if (response.status === 201) {
+      resetForm();
+      navigate("/admin");
+    }
+
     // Add form submission logic here
   };
 
