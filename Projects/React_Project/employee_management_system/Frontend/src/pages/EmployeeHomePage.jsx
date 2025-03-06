@@ -8,6 +8,7 @@ import { EmployeeDataContext } from "../context/EmployeeContext";
 
 export default function EmployeeHomePage() {
   const { employee } = useContext(EmployeeDataContext);
+  console.log(employee);
 
   return (
     <div className="min-h-screen bg-gray-100">

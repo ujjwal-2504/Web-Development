@@ -18,23 +18,25 @@ const EmployeeProtectedWrapper = ({ children }) => {
     }
   }, [token, navigate]);
 
-  axios
-    .get(`${import.meta.env.VITE_BASE_URL}/employee/profile`, {
-      headers: {
-        Authorization: `Bearer: ${token}`,
-      },
-    })
-    .then((response) => {
-      if (response.status === 200) {
-        setEmployee(response.data);
-        setIsLoading(false);
-      }
-    })
-    .catch((err) => {
-      console.log("Error from Employee Protected Wrapper: ", err);
-      localStorage.removeItem("token");
-      navigate("/employee/login");
-    });
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BASE_URL}/employee/profile`, {
+        headers: {
+          Authorization: `Bearer ${token}`, // 🔥 Remove the extra colon after Bearer
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          setEmployee(response.data);
+          setIsLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.log("Error from Employee Protected Wrapper: ", err);
+        localStorage.removeItem("token");
+        navigate("/employee/login");
+      });
+  }, [token, navigate]); // ✅ Runs only when token or navigate changes
 
   if (isLoading) {
     return <>Loding...</>;

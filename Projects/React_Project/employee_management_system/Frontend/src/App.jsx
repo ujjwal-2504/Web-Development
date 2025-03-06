@@ -13,6 +13,7 @@ import RegisterAdmin from "./pages/Auth/RegisterAdmin";
 import EmployeeProtectedWrapper from "./pages/Auth/EmployeeProtectedWrapper";
 import EmployeeLogout from "./pages/Auth/EmployeeLogout";
 import AdminProtectedWrapper from "./pages/Auth/AdminProtectedWrapper";
+import EmpHomePage from "./pages/EmpHomePage";
 
 // Test section
 import AllTask from "./components/Others/AllTask";
@@ -26,7 +27,8 @@ const App = () => {
           path="/employee"
           element={
             <EmployeeProtectedWrapper>
-              <EmployeeHomePage />
+              {/* <EmployeeHomePage /> */}
+              <EmpHomePage />
             </EmployeeProtectedWrapper>
           }
         />
