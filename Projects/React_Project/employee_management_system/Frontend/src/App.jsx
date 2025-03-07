@@ -36,6 +36,7 @@ const App = () => {
         <Route path="/employee/all-tasks" element={<AllTask />} />
         <Route path="/employee/login" element={<EmployeeLogin />} />
         <Route path="/employee/logout" element={<EmployeeLogout />} />
+        <Route path="/employee/dashboard" element={<EmployeeDashboard />} />
         <Route
           path="/admin"
           element={

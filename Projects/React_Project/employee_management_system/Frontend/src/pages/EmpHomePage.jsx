@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useContext } from "react";
 import { extendTheme, styled } from "@mui/material/styles";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -10,6 +11,10 @@ import { AppProvider } from "@toolpad/core/AppProvider";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import { PageContainer } from "@toolpad/core/PageContainer";
 import Grid from "@mui/material/Grid2";
+import GroupsIcon from "@mui/icons-material/Groups";
+import { EmployeeDataContext } from "../context/EmployeeContext";
+import EmployeeDashboard from "../components/Dashboard/EmployeeDashboard";
+import { Link } from "react-router-dom";
 
 const NAVIGATION = [
   {
@@ -22,7 +27,12 @@ const NAVIGATION = [
     icon: <DashboardIcon />,
   },
   {
-    segment: "allTasks",
+    segment: "myTask",
+    title: "My Tasks",
+    icon: <AddTaskIcon />,
+  },
+  {
+    segment: "allTask",
     title: "All Tasks",
     icon: <AddTaskIcon />,
   },
@@ -31,29 +41,12 @@ const NAVIGATION = [
   },
   {
     kind: "header",
-    title: "Analytics",
+    title: "Teams",
   },
   {
-    segment: "reports",
-    title: "Reports",
-    icon: <BarChartIcon />,
-    children: [
-      {
-        segment: "sales",
-        title: "Sales",
-        icon: <DescriptionIcon />,
-      },
-      {
-        segment: "traffic",
-        title: "Traffic",
-        icon: <DescriptionIcon />,
-      },
-    ],
-  },
-  {
-    segment: "integrations",
-    title: "Integrations",
-    icon: <LayersIcon />,
+    segment: "myTeam",
+    title: "My Team",
+    icon: <GroupsIcon />,
   },
 ];
 
@@ -92,56 +85,25 @@ const Skeleton = styled("div")(({ theme, height }) => ({
   content: '" "',
 }));
 
-export default function EmpHomePage(props) {
-  const { window } = props;
+const branding = {
+  logo: <img src="../assets/LogoBlueBg.JPG" alt="EMS logo" />,
+  title: "Employee Managenent System",
+  homeUrl: "/",
+};
 
+export default function EmpHomePage() {
   const router = useDemoRouter("/dashboard");
 
-  // Remove this const when copying and pasting into your project.
-  const demoWindow = window ? window() : undefined;
+  const { employee } = useContext(EmployeeDataContext);
 
   return (
-    <AppProvider
-      navigation={NAVIGATION}
-      router={router}
-      theme={demoTheme}
-      window={demoWindow}
-    >
+    <AppProvider navigation={NAVIGATION} router={router} branding={branding}>
       <DashboardLayout>
         <PageContainer>
           <Grid container spacing={1}>
             <Grid size={5} />
             <Grid size={12}>
-              <Skeleton height={14} />
-            </Grid>
-            <Grid size={12}>
-              <Skeleton height={14} />
-            </Grid>
-            <Grid size={4}>
-              <Skeleton height={100} />
-            </Grid>
-            <Grid size={8}>
-              <Skeleton height={100} />
-            </Grid>
-
-            <Grid size={12}>
-              <Skeleton height={150} />
-            </Grid>
-            <Grid size={12}>
-              <Skeleton height={14} />
-            </Grid>
-
-            <Grid size={3}>
-              <Skeleton height={100} />
-            </Grid>
-            <Grid size={3}>
-              <Skeleton height={100} />
-            </Grid>
-            <Grid size={3}>
-              <Skeleton height={100} />
-            </Grid>
-            <Grid size={3}>
-              <Skeleton height={100} />
+              <EmployeeDashboard data={employee} />
             </Grid>
           </Grid>
         </PageContainer>

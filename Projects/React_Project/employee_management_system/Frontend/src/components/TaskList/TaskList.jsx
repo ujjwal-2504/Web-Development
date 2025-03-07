@@ -6,10 +6,7 @@ import FailedTask from "./FailedTask";
 
 const TaskList = ({ data }) => {
   return (
-    <div
-      id="taskList"
-      className="v-scrollbar h-[55%] overflow-x-auto flex gap-5 items-center flex-nowrap w-full py-5  mt-10"
-    >
+    <div id="taskList" className=" mt-4 flex flex-col gap-2">
       {data.map((task, idx) => {
         if (task.newTask) return <NewTask key={idx} task={task} />;
         if (task.accepted) return <AcceptTask key={idx} task={task} />;
