@@ -22,7 +22,7 @@ const EmployeeProtectedWrapper = ({ children }) => {
     axios
       .get(`${import.meta.env.VITE_BASE_URL}/employee/profile`, {
         headers: {
-          Authorization: `Bearer ${token}`, // 🔥 Remove the extra colon after Bearer
+          Authorization: `Bearer ${token}`,
         },
       })
       .then((response) => {

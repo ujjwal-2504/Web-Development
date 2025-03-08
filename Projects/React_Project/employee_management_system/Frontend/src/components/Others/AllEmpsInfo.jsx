@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 
-const AllTask = () => {
-  // const { userData } = useContext(AuthContext);
-
+const AllEmpsInfo = () => {
   return (
     <div className="bg-zinc-900 p-5 mt-4 rounded-lg flex flex-col gap-2">
       <div className="bg-orange-950 px-4 flex justify-between items-center rounded-lg">
@@ -53,4 +51,4 @@ const AllTask = () => {
   );
 };
 
-export default AllTask;
+export default AllEmpsInfo;

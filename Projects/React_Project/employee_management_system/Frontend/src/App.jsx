@@ -16,7 +16,7 @@ import AdminProtectedWrapper from "./pages/Auth/AdminProtectedWrapper";
 import EmpHomePage from "./pages/EmpHomePage";
 
 // Test section
-import AllTask from "./components/Others/AllTask";
+import AllTask from "./components/Others/AllEmpsInfo";
 
 const App = () => {
   return (
@@ -27,8 +27,7 @@ const App = () => {
           path="/employee"
           element={
             <EmployeeProtectedWrapper>
-              {/* <EmployeeHomePage /> */}
-              <EmpHomePage />
+              <EmployeeHomePage />
             </EmployeeProtectedWrapper>
           }
         />

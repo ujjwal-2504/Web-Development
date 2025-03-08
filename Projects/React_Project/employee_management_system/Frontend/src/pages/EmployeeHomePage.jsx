@@ -1,66 +1,80 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Button } from "../components/ui/Button";
+import React, { useContext, useState } from "react";
 import { Card, CardContent } from "../components/ui/Card";
 import { Briefcase, Users, PlusCircle } from "lucide-react";
+import DashboardIcon from "@mui/icons-material/Dashboard";
 import Navbar from "../components/Others/Navbar";
 import { EmployeeDataContext } from "../context/EmployeeContext";
+import EmployeeDashboard from "../components/Dashboard/EmployeeDashboard";
+import AllTasks from "../components/sections/AllTasks";
+import MyTeam from "../components/sections/MyTeam";
 
 export default function EmployeeHomePage() {
   const { employee } = useContext(EmployeeDataContext);
-  console.log(employee);
+
+  const [selectedOption, setSelectedOption] = useState("dashboard");
+
+  const handelOptions = (option) => {
+    setSelectedOption(option);
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
-      <Navbar who="employee" />
-
-      {/* Display Employee Information */}
-      <div className="container mx-auto p-8 text-black">
-        <h1 className="text-2xl font-bold">
-          Welcome, {employee.firstName} {employee.lastName}
-        </h1>
-        <p className="text-gray-600">Email: {employee.email}</p>
-        <p className="text-gray-600">Gender: {employee.gender}</p>
-      </div>
+      <Navbar who="employee" data={employee} />
 
       {/* Quick Links */}
-      <div className="container mx-auto p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Card>
-          <CardContent className="p-6 flex flex-col items-center text-center">
-            <Briefcase size={40} className="text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold text-neutral-800">
-              View Tasks
-            </h3>
-            <p className="text-gray-600">See the list of all tasks</p>
-            <Button asChild className="mt-4">
-              <Link to="/employees">All Tasks</Link>
-            </Button>
+      <div className="container mx-auto p-2 flex gap-2 bg-gray-400 h-40 mt-2">
+        <Card className="flex-1 h-full pt-2">
+          <CardContent className=" flex flex-col w-full items-center text-center gap-2">
+            <h2 className="text-neutral-900 text-xl">My tasks</h2>
+            <button
+              id="dashboard"
+              className="w-full flex items-center justify-center gap-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              onClick={() => handelOptions("dashboard")}
+            >
+              <DashboardIcon
+                sx={{ fontSize: 40 }}
+                className="text-orange-300"
+              />
+              <span>Dashboard</span>
+            </button>
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6 flex flex-col items-center text-center">
-            <Users size={40} className="text-green-600 mb-4" />
-            <h3 className="text-xl font-semibold text-neutral-800">Team</h3>
-            <p className="text-gray-600">View Team Progress</p>
-            <Button asChild className="mt-4">
-              <Link to="/teams">View My Teams</Link>
-            </Button>
+        <Card className=" flex-1 h-full pt-2">
+          <CardContent className=" flex flex-col w-full items-center text-center gap-2">
+            <h2 className="text-neutral-900 text-xl">View Team Progress</h2>
+            <button
+              id="myTeam"
+              className="w-full flex items-center justify-center gap-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              onClick={() => handelOptions("myTeam")}
+            >
+              <Users size={40} className="text-green-600" />
+              <span>View My Team</span>
+            </button>
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent className="p-6 flex flex-col items-center text-center">
-            <PlusCircle size={40} className="text-purple-600 mb-4" />
-            <h3 className="text-xl font-semibold text-neutral-800">Tasks</h3>
-            <p className="text-gray-600">Your tasks and task status</p>
-            <Button asChild className="mt-4">
-              <Link to="/add-employee">View My Tasks</Link>
-            </Button>
+        <Card className=" flex-1  h-full pt-2">
+          <CardContent className=" flex flex-col w-full items-center text-center gap-2">
+            <h2 className="text-neutral-900 text-xl">
+              See the list of all tasks
+            </h2>
+            <button
+              id="allTasks"
+              className="w-full flex items-center justify-center gap-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              onClick={() => handelOptions("allTasks")}
+            >
+              <Briefcase size={40} className="text-orange-300" />
+              <span>All Tasks</span>
+            </button>
           </CardContent>
         </Card>
       </div>
+
+      {selectedOption === "dashboard" && <EmployeeDashboard data={employee} />}
+      {selectedOption === "myTeam" && <MyTeam />}
+      {selectedOption === "allTasks" && <AllTasks />}
     </div>
   );
 }

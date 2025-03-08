@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../Others/Header";
+import Header from "../Others/EmpHeader";
 import TaskListBlocks from "../Others/TaskListBlocks";
 import TaskList from "../TaskList/TaskList";
 
 const EmployeeDashboard = ({ data }) => {
   return (
-    <div>
+    <div className="px-8">
       <div>
         <TaskListBlocks data={data.taskNumbers} />
         <TaskList data={data.tasks} />

@@ -2,11 +2,7 @@ import * as React from "react";
 import { useContext } from "react";
 import { extendTheme, styled } from "@mui/material/styles";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import BarChartIcon from "@mui/icons-material/BarChart";
 import AddTaskIcon from "@mui/icons-material/AddTask";
-import DescriptionIcon from "@mui/icons-material/Description";
-import LayersIcon from "@mui/icons-material/Layers";
 import { AppProvider } from "@toolpad/core/AppProvider";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import { PageContainer } from "@toolpad/core/PageContainer";
@@ -78,13 +74,6 @@ function useDemoRouter(initialPath) {
   return router;
 }
 
-const Skeleton = styled("div")(({ theme, height }) => ({
-  backgroundColor: theme.palette.action.hover,
-  borderRadius: theme.shape.borderRadius,
-  height,
-  content: '" "',
-}));
-
 const branding = {
   logo: <img src="../assets/LogoBlueBg.JPG" alt="EMS logo" />,
   title: "Employee Managenent System",
@@ -92,20 +81,16 @@ const branding = {
 };
 
 export default function EmpHomePage() {
-  const router = useDemoRouter("/dashboard");
+  const router = useDemoRouter("/employee/dashboard");
 
   const { employee } = useContext(EmployeeDataContext);
+  console.log(NAVIGATION);
 
   return (
     <AppProvider navigation={NAVIGATION} router={router} branding={branding}>
       <DashboardLayout>
         <PageContainer>
-          <Grid container spacing={1}>
-            <Grid size={5} />
-            <Grid size={12}>
-              <EmployeeDashboard data={employee} />
-            </Grid>
-          </Grid>
+          <EmployeeDashboard data={employee} />
         </PageContainer>
       </DashboardLayout>
     </AppProvider>
