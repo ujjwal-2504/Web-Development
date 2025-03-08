@@ -37,7 +37,7 @@ function Navbar({ who, data }) {
   };
 
   return (
-    <nav className="bg-blue-600 p-4 text-white flex justify-between items-center">
+    <nav className="bg-blue-600 p-4 text-white flex justify-between items-center sticky top-0 z-10">
       <Link to="/" className="text-2xl font-bold">
         Employee Management System
       </Link>

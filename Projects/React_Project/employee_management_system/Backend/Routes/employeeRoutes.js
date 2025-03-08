@@ -1,6 +1,7 @@
 import express from "express";
 import { body } from "express-validator";
 import { authEmployee } from "../middlewares/authMiddleware.js";
+import employeeModel from "../Models/employeeModel.js";
 import {
   newEmployee,
   loginEmployee,
@@ -41,5 +42,28 @@ router.post(
 router.get("/profile", authEmployee, getEmployeeProfile);
 
 router.get("/logout", authEmployee, logoutEmployee);
+
+router.post("/createTask", async (req, res, next) => {
+  try {
+    const { newTask, assignTo } = req.body;
+
+    const updatedEmp = await employeeModel.findByIdAndUpdate(
+      assignTo,
+      {
+        $push: { tasks: newTask }, // Add new task to tasks array
+        $inc: { "taskNumbers.newTask": 1 }, // Increment newTask count
+      },
+      { new: true } // Return updated document
+    );
+
+    if (!updatedEmp) {
+      return res.status(404).json({ message: "Employee not found" });
+    }
+
+    res.status(200).json({ message: "Task Created" });
+  } catch (error) {
+    console.log("Error during create task: ", error);
+  }
+});
 
 export default router;

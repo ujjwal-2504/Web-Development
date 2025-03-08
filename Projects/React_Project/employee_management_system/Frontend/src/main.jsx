@@ -8,12 +8,12 @@ import AdminContext from "./context/AdminContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AdminContext>
-      <EmployeeContext>
-        <BrowserRouter>
+    <BrowserRouter>
+      <AdminContext>
+        <EmployeeContext>
           <App />
-        </BrowserRouter>
-      </EmployeeContext>
-    </AdminContext>
+        </EmployeeContext>
+      </AdminContext>
+    </BrowserRouter>
   </StrictMode>
 );

@@ -5,6 +5,7 @@ import { configDotenv } from "dotenv";
 import cookieParser from "cookie-parser";
 import employeeRoutes from "./Routes/employeeRoutes.js";
 import adminRoutes from "./Routes/adminRoutes.js";
+import tasksRoutes from "./Routes/tasksRoutes.js";
 configDotenv();
 
 // Database and server--------------------------------------------
@@ -69,3 +70,4 @@ app.get("/api/jokes", (req, res) => {
 
 app.use("/employee", employeeRoutes);
 app.use("/admin", adminRoutes);
+app.use("/tasks", tasksRoutes);

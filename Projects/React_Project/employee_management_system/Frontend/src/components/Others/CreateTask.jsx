@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { getLocalStorage } from "../../utils/LocalStorage";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-const CreateTask = ({ setUserData }) => {
+const CreateTask = ({ id, className, employees }) => {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [taskDate, setTaskDate] = useState("");
@@ -22,15 +22,6 @@ const CreateTask = ({ setUserData }) => {
     };
   }
 
-  function searchEmployee(name) {
-    const { employees, admin } = getLocalStorage();
-    const targetEmployee = employees.find((emp) => {
-      return emp.firstName === name;
-    });
-
-    return { targetEmployee, employees, admin };
-  }
-
   function resetForm() {
     setTaskTitle("");
     setTaskDescription("");
@@ -40,16 +31,21 @@ const CreateTask = ({ setUserData }) => {
     newTask = {};
   }
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    const { targetEmployee, employees, admin } = searchEmployee(assignTo);
+    createTask(taskTitle, taskDescription, taskDate, category);
 
-    if (targetEmployee) {
-      createTask(taskTitle, taskDescription, taskDate, category);
-      targetEmployee.tasks.push(newTask);
-      targetEmployee.taskNumbers.newTask++;
-      localStorage.setItem("employees", JSON.stringify(employees));
-      setUserData({ employees, admin });
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/employee/createTask`,
+        { newTask, assignTo }
+      );
+
+      if (response.status === 200) {
+        console.log("Task Created");
+      }
+    } catch (error) {
+      console.error("Error during assigning task:", error);
     }
 
     resetForm();
@@ -58,8 +54,9 @@ const CreateTask = ({ setUserData }) => {
   return (
     <div>
       <form
+        id={id}
         onSubmit={(e) => submitHandler(e)}
-        className="bg-zinc-900 p-5 flex justify-between items-center mt-5 rounded-lg"
+        className={`bg-indigo-300 text-black p-5 flex justify-between items-center mt-5 rounded-lg ${className}`}
       >
         <div className="flex flex-col gap-4 h-full w-[45%]">
           <div className="flex flex-col text-lg">
@@ -71,7 +68,7 @@ const CreateTask = ({ setUserData }) => {
               id="title"
               type="text"
               placeholder="eg: Make a UI design"
-              className="border-1 border-white px-2 py-1 rounded-lg text-lg"
+              className="border-3 border-blue-900 px-2 py-1 rounded-lg text-lg"
             />
           </div>
 
@@ -82,21 +79,30 @@ const CreateTask = ({ setUserData }) => {
               value={taskDate}
               onChange={(e) => setTaskDate(e.target.value)}
               type="date"
-              className="border-1 border-white px-2 py-1 rounded-lg text-lg"
+              className="border-3 border-blue-900 px-2 py-1 rounded-lg text-lg"
             />
           </div>
 
           <div className="flex flex-col">
-            <label htmlFor="assignTo">Assign to: </label>
-            <input
-              required
-              value={assignTo}
-              onChange={(e) => setAssignTo(e.target.value)}
+            <label htmlFor="assignTo">Assign to:</label>
+            <select
+              className="border-3 border-blue-900 px-2 py-1 rounded-lg text-lg"
               id="assignTo"
-              type="text"
-              placeholder="employee name"
-              className="border-1 border-white px-2 py-1 rounded-lg text-lg"
-            />
+              name="assignTo"
+              value={assignTo} // ✅ Control selection
+              onChange={(e) => setAssignTo(e.target.value)}
+              required
+            >
+              <option value="" disabled>
+                Select an employee
+              </option>{" "}
+              {/* Placeholder */}
+              {(employees || []).map((employee) => (
+                <option key={employee._id} value={employee._id}>
+                  {employee.firstName} {employee.lastName}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="flex flex-col">
@@ -108,7 +114,7 @@ const CreateTask = ({ setUserData }) => {
               id="category"
               type="text"
               placeholder="desing, dev, etc"
-              className="border-1 border-white px-2 py-1 rounded-lg text-lg"
+              className="border-3 border-blue-900 px-2 py-1 rounded-lg text-lg"
             />
           </div>
         </div>
@@ -122,9 +128,9 @@ const CreateTask = ({ setUserData }) => {
             id="description"
             cols="30"
             rows="7"
-            className="border-1 border-white rounded-lg p-2"
+            className="border-3 border-blue-900 rounded-lg p-2"
           ></textarea>
-          <button className="mt-4 bg-green-700 py-2 text-xl rounded-lg">
+          <button className="mt-4 bg-green-900 py-2 text-xl rounded-lg text-white">
             Create Task
           </button>
         </div>

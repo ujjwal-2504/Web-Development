@@ -17,6 +17,7 @@ import EmpHomePage from "./pages/EmpHomePage";
 
 // Test section
 import AllTask from "./components/Others/AllEmpsInfo";
+import CreateTask from "./components/Others/CreateTask";
 
 const App = () => {
   return (
@@ -45,6 +46,7 @@ const App = () => {
           }
         />
         <Route path="/admin/register" element={<RegisterAdmin />} />
+        <Route path={`/admin/assign-task/:adminId`} element={<CreateTask />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/logout" element={<AdminLogout />} />
       </Routes>

@@ -19,13 +19,12 @@ const AdminProtectedWrapper = ({ children }) => {
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BASE_URL}/admin/profile`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+        headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
         if (response.status === 200) {
-          setAdminData(response.data);
+          // Merge response data with existing adminData so that allEmpData is not lost
+          setAdminData((prev) => ({ ...prev, ...response.data }));
           setIsLoading(false);
         }
       })
