@@ -1,13 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
+import Button from "@mui/material/Button";
+import axios from "axios";
+import { EmployeeDataContext } from "../../context/EmployeeContext";
 
-const AcceptTask = ({ task }) => {
+const AcceptTask = ({ task, empId }) => {
+  const adminName = `${task.assignedBy.adminName.firstName} ${task.assignedBy.adminName.lastName}`;
+
+  const { refreshEmployeeData } = useContext(EmployeeDataContext);
+
+  const handelClick = async (status) => {
+    await axios
+      .patch(`${import.meta.env.VITE_BASE_URL}/task/${status}-task`, {
+        taskId: task._id,
+        empId: empId,
+      })
+      .then((response) => {
+        refreshEmployeeData();
+      })
+      .catch((err) => {
+        console.log("Error in accepting task: ", err);
+      });
+  };
+
   return (
     <div className="flex-shrink-0 h-full bg-blue-950 rounded-xl p-5 flex flex-col justify-between">
       <div>
         <div className="flex justify-between items-center px-3 ">
-          <h3 className="bg-red-500 px-2 rounded-sm text-white">
-            {task.category}
-          </h3>
+          <span className="flex gap-2">
+            <h3 className="bg-red-500 px-2 rounded-sm">{task.category}</h3>
+            <h3 className="bg-amber-500 rounded-sm px-2 text-black">
+              Assigned By: <b className="text-gray-900">{`${adminName}`}</b>
+            </h3>
+          </span>
           <h4 className="text-sm">{task.date}</h4>
         </div>
         <h2 className="text-3xl font-semibold mt-2">{task.title}</h2>
@@ -15,12 +39,20 @@ const AcceptTask = ({ task }) => {
       </div>
 
       <div className="flex justify-end gap-2 mt-4 ">
-        <button className="bg-green-600 py-1 px-2 text-sm rounded-lg">
-          Mark as Completed
-        </button>
-        <button className="bg-red-500 py-1 px-2 text-sm rounded-lg">
+        <Button
+          variant="contained"
+          color="success"
+          onClick={() => handelClick("completed")}
+        >
+          Mark as Complete
+        </Button>
+        <Button
+          variant="contained"
+          color="error"
+          onClick={() => handelClick("failed")}
+        >
           Mark as Failed
-        </button>
+        </Button>
       </div>
     </div>
   );

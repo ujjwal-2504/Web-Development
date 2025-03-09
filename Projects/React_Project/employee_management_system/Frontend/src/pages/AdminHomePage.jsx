@@ -21,25 +21,25 @@ export default function AdminHomePage() {
       {/* Quick Links */}
       <div className="container p-2 flex gap-2 bg-indigo-300 mt-2">
         <CardContent className=" flex flex-col w-full items-center text-center gap-2">
-          <Link
-            to="#viewEmp"
+          <a
+            href="#viewEmp"
             id="employees"
             className="w-full flex items-center justify-center gap-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
           >
             <Briefcase size={40} />
             <span>View Employees</span>
-          </Link>
+          </a>
         </CardContent>
 
         <CardContent className=" flex flex-col w-full items-center text-center gap-2">
-          <Link
-            to="#assignTask"
+          <a
+            href="#assignTask"
             id="employees"
             className="w-full flex items-center justify-center gap-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
           >
             <AddTaskIcon sx={{ fontSize: 40 }} className="text-emerald-400" />
             <span>Assign Tasks</span>
-          </Link>
+          </a>
         </CardContent>
 
         <CardContent className=" flex flex-col w-full items-center text-center gap-2">
@@ -71,11 +71,7 @@ export default function AdminHomePage() {
         employees={adminData.allEmpData}
       />
 
-      <CreateTask
-        id="assignTask"
-        className="mx-8"
-        employees={adminData.allEmpData}
-      />
+      <CreateTask id="assignTask" className="mx-8" adminData={adminData} />
     </div>
   );
 }

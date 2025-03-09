@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 
-const CreateTask = ({ id, className, employees }) => {
+const CreateTask = ({ id, className, adminData }) => {
+  const employees = adminData.allEmpData;
+
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [taskDate, setTaskDate] = useState("");
@@ -9,7 +11,7 @@ const CreateTask = ({ id, className, employees }) => {
   const [category, setCategory] = useState("");
   let newTask = {};
 
-  function createTask(title, description, date, category) {
+  function createTask(title, description, date, category, assignedBy) {
     newTask = {
       title: title,
       description: description,
@@ -19,6 +21,7 @@ const CreateTask = ({ id, className, employees }) => {
       newTask: true,
       completed: false,
       failed: false,
+      assignedBy: assignedBy,
     };
   }
 
@@ -33,7 +36,15 @@ const CreateTask = ({ id, className, employees }) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    createTask(taskTitle, taskDescription, taskDate, category);
+
+    const assignedBy = {
+      adminName: {
+        firstName: adminData.firstName,
+        lastName: adminData.lastName,
+      },
+      admin: adminData._id,
+    };
+    createTask(taskTitle, taskDescription, taskDate, category, assignedBy);
 
     try {
       const response = await axios.post(

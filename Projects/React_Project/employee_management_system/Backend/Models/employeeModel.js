@@ -1,39 +1,100 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import admin from "./adminModel.js";
 
 //Schema
 const employeeSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    requried: true,
+    required: true,
     minlength: [3, "First name must be at least 3 character long"],
   },
   lastName: {
     type: String,
-    requried: true,
+    required: true,
     minlength: [3, "Last name must be at least 3 character long"],
   },
-  gender: { type: String, requried: true },
-  email: { type: String, requried: true, unique: true },
-  password: { type: String, requried: true, select: false },
+  gender: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true, select: false },
   tasks: [
     {
-      title: String,
-      description: String,
-      date: Date,
-      category: String,
-      accepted: Boolean,
-      newTask: Boolean,
-      completed: Boolean,
-      failed: Boolean,
+      title: {
+        type: String,
+        required: true,
+      },
+      description: {
+        type: String,
+        required: true,
+      },
+      date: {
+        type: Date,
+        required: true,
+      },
+      category: {
+        type: String,
+        required: true,
+      },
+      accepted: {
+        type: Boolean,
+        required: true,
+      },
+      newTask: {
+        type: Boolean,
+        required: true,
+      },
+      completed: {
+        type: Boolean,
+        required: true,
+      },
+      failed: {
+        type: Boolean,
+        required: true,
+      },
+      assignedBy: {
+        adminName: {
+          firstName: {
+            type: String,
+            required: true,
+          },
+          lastName: {
+            type: String,
+            required: true,
+          },
+        },
+        admin: {
+          type: Schema.Types.ObjectId,
+          ref: "admin",
+        },
+      },
     },
   ],
   taskNumbers: {
-    accepted: Number,
-    newTask: Number,
-    completed: Number,
-    failed: Number,
+    accepted: {
+      type: Number,
+      default: 0,
+      min: 0,
+      required: true,
+    },
+    newTask: {
+      type: Number,
+      default: 0,
+      min: 0,
+      required: true,
+    },
+    completed: {
+      type: Number,
+      default: 0,
+      min: 0,
+      required: true,
+    },
+    failed: {
+      type: Number,
+      default: 0,
+      min: 0,
+      required: true,
+    },
   },
 });
 

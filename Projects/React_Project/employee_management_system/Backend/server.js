@@ -70,4 +70,4 @@ app.get("/api/jokes", (req, res) => {
 
 app.use("/employee", employeeRoutes);
 app.use("/admin", adminRoutes);
-app.use("/tasks", tasksRoutes);
+app.use("/task", tasksRoutes);

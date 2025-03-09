@@ -8,7 +8,7 @@ const EmployeeDashboard = ({ data }) => {
     <div className="px-8">
       <div>
         <TaskListBlocks data={data.taskNumbers} />
-        <TaskList data={data.tasks} />
+        <TaskList data={data.tasks} empId={data._id} />
       </div>
     </div>
   );
