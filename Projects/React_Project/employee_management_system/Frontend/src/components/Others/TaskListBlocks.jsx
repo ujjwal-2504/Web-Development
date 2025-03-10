@@ -1,27 +1,48 @@
 import React from "react";
+import { Button } from "@material-tailwind/react";
 
-const TaskListBlocks = ({ data }) => {
+const TaskListBlocks = ({ data, setFilter }) => {
+  const handelFilter = (filter) => {
+    setFilter(filter);
+  };
+
   return (
     <div className="flex justify-between gap-5 screen mt-10">
-      <div className="px-9 py-6 flex-1 bg-green-900 rounded-xl">
-        <h2 className="text-3xl font-medium">{data.newTask}</h2>
-        <h3 className="text-2xl font-semibold">New Task</h3>
-      </div>
+      <Button
+        variant="filled"
+        className="px-9 py-6 flex-1 bg-green-900 rounded-xl "
+        onClick={() => handelFilter("newTask")}
+      >
+        <h2 className="text-3xl font-medium text-start">{data.newTask}</h2>
+        <h3 className="text-2xl font-semibold text-start">New Task</h3>
+      </Button>
 
-      <div className="px-9 py-6 flex-1 bg-blue-950 rounded-xl">
-        <h2 className="text-3xl font-medium">{data.accepted}</h2>
-        <h3 className="text-2xl font-semibold">Accepted Task</h3>
-      </div>
+      <Button
+        variant="filled"
+        className="px-9 py-6 flex-1 bg-blue-950 rounded-xl"
+        onClick={() => handelFilter("accepted")}
+      >
+        <h2 className="text-3xl font-medium text-start">{data.accepted}</h2>
+        <h3 className="text-2xl font-semibold text-start">Accepted Task</h3>
+      </Button>
 
-      <div className="px-9 py-6 flex-1 bg-yellow-700 rounded-xl">
-        <h2 className="text-3xl font-medium">{data.completed}</h2>
-        <h3 className="text-2xl font-semibold">Completed Task</h3>
-      </div>
+      <Button
+        variant="filled"
+        className="px-9 py-6 flex-1 bg-yellow-700 rounded-xl"
+        onClick={() => handelFilter("completed")}
+      >
+        <h2 className="text-3xl font-medium text-start">{data.completed}</h2>
+        <h3 className="text-2xl font-semibold text-start">Completed Task</h3>
+      </Button>
 
-      <div className="px-9 py-6 flex-1 bg-red-900 rounded-xl">
-        <h2 className="text-3xl font-medium">{data.failed}</h2>
-        <h3 className="text-2xl font-semibold">Failed Task</h3>
-      </div>
+      <Button
+        variant="filled"
+        className="px-9 py-6 flex-1 bg-red-900 rounded-xl"
+        onClick={() => handelFilter("failed")}
+      >
+        <h2 className="text-3xl font-medium text-start">{data.failed}</h2>
+        <h3 className="text-2xl font-semibold text-start">Failed Task</h3>
+      </Button>
     </div>
   );
 };

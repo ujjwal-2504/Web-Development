@@ -23,7 +23,7 @@ export default function EmployeeHomePage() {
       <Navbar who="employee" data={employee} />
 
       {/* Quick Links */}
-      <div className="container mx-auto p-2 flex gap-2 bg-gray-400 h-40 mt-2">
+      <div className="container w-full p-2 flex gap-2 bg-gray-400 h-40 mt-2">
         <Card className="flex-1 h-full pt-2">
           <CardContent className=" flex flex-col w-full items-center text-center gap-2">
             <h2 className="text-neutral-900 text-xl">My tasks</h2>
