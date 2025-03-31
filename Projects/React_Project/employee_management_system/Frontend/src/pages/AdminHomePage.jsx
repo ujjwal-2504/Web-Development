@@ -44,7 +44,7 @@ export default function AdminHomePage() {
 
         <CardContent className=" flex flex-col w-full items-center text-center gap-2">
           <Link
-            to="/manage-teams"
+            to="/admin/manage-teams"
             id="teams"
             className="w-full flex items-center justify-center gap-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
           >

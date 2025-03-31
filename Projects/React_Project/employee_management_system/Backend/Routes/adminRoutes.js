@@ -44,7 +44,7 @@ router.get("/profile", authAdmin, getAdminProfile);
 
 router.get("/logout", authAdmin, logoutAdmin);
 
-router.get("/:adminId/get-all-employee", async (req, res, next) => {
+router.get("/:adminId/get-all-employee", authAdmin, async (req, res, next) => {
   try {
     const { adminId } = req.params;
     const check = await checkAdmin(adminId); // Wait for the Promise to resolve

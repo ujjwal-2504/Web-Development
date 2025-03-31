@@ -34,8 +34,29 @@ const CreateTask = ({ id, className, adminData }) => {
     newTask = {};
   }
 
+  // ---------------------------------------------------------
+  // Date
+
+  // Get today's date in YYYY-MM-DD format
+  const getCurrentDate = () => {
+    return new Date().toISOString().split("T")[0];
+  };
+
+  // Get the max allowed date (2 months from today)
+  const getMaxDate = () => {
+    const maxDate = new Date();
+    maxDate.setMonth(maxDate.getMonth() + 2); // Add 2 months
+    return maxDate.toISOString().split("T")[0];
+  };
+
+  //----------------------------------------------------------
+
   const submitHandler = async (e) => {
     e.preventDefault();
+
+    // Get current date and time
+    const currentDateTime = new Date().toISOString();
+    console.log(currentDateTime);
 
     const assignedBy = {
       adminName: {
@@ -90,6 +111,8 @@ const CreateTask = ({ id, className, adminData }) => {
               value={taskDate}
               onChange={(e) => setTaskDate(e.target.value)}
               type="date"
+              min={getCurrentDate()} // Set min date as today
+              max={getMaxDate()} // Set max date as 2 months ahead
               className="border-3 border-blue-900 px-2 py-1 rounded-lg text-lg"
             />
           </div>

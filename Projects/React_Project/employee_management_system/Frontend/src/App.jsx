@@ -14,6 +14,7 @@ import EmployeeProtectedWrapper from "./pages/Auth/EmployeeProtectedWrapper";
 import EmployeeLogout from "./pages/Auth/EmployeeLogout";
 import AdminProtectedWrapper from "./pages/Auth/AdminProtectedWrapper";
 import EmpHomePage from "./pages/EmpHomePage";
+import ManageTeams from "./pages/ManageTeams";
 
 // Test section
 import AllTask from "./components/Others/AllEmpsInfo";
@@ -36,7 +37,6 @@ const App = () => {
         <Route path="/employee/all-tasks" element={<AllTask />} />
         <Route path="/employee/login" element={<EmployeeLogin />} />
         <Route path="/employee/logout" element={<EmployeeLogout />} />
-        <Route path="/employee/dashboard" element={<EmployeeDashboard />} />
         <Route
           path="/admin"
           element={
@@ -47,6 +47,7 @@ const App = () => {
         />
         <Route path="/admin/register" element={<RegisterAdmin />} />
         <Route path={`/admin/assign-task/:adminId`} element={<CreateTask />} />
+        <Route path="/admin/manage-teams" element={<ManageTeams />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/logout" element={<AdminLogout />} />
       </Routes>
