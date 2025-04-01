@@ -10,7 +10,7 @@ const TaskListBlocks = ({ data, setFilter }) => {
     <div className="flex justify-between gap-5 screen mt-10">
       <Button
         variant="filled"
-        className="px-9 py-6 flex-1 bg-green-900 rounded-xl "
+        className="px-9 py-6 flex-1 bg-green-900 rounded-xl cursor-pointer"
         onClick={() => handelFilter("newTask")}
       >
         <h2 className="text-3xl font-medium text-start">{data.newTask}</h2>
@@ -19,7 +19,7 @@ const TaskListBlocks = ({ data, setFilter }) => {
 
       <Button
         variant="filled"
-        className="px-9 py-6 flex-1 bg-blue-950 rounded-xl"
+        className="px-9 py-6 flex-1 bg-blue-950 rounded-xl cursor-pointer"
         onClick={() => handelFilter("accepted")}
       >
         <h2 className="text-3xl font-medium text-start">{data.accepted}</h2>
@@ -28,7 +28,7 @@ const TaskListBlocks = ({ data, setFilter }) => {
 
       <Button
         variant="filled"
-        className="px-9 py-6 flex-1 bg-yellow-700 rounded-xl"
+        className="px-9 py-6 flex-1 bg-yellow-700 rounded-xl cursor-pointer"
         onClick={() => handelFilter("completed")}
       >
         <h2 className="text-3xl font-medium text-start">{data.completed}</h2>
@@ -37,7 +37,7 @@ const TaskListBlocks = ({ data, setFilter }) => {
 
       <Button
         variant="filled"
-        className="px-9 py-6 flex-1 bg-red-900 rounded-xl"
+        className="px-9 py-6 flex-1 bg-red-900 rounded-xl cursor-pointer"
         onClick={() => handelFilter("failed")}
       >
         <h2 className="text-3xl font-medium text-start">{data.failed}</h2>

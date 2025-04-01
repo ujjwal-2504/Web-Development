@@ -20,11 +20,11 @@ const AdminContext = ({ children }) => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!token) {
-      navigate("/admin/login");
-    }
-  }, [token, navigate]);
+  // useEffect(() => {
+  //   if (!token) {
+  //     navigate("/admin/login");
+  //   }
+  // }, [token, navigate]);
 
   useEffect(() => {
     if (!adminData._id) return; // Ensure _id is valid before making the request

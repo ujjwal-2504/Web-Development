@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
+import Title from "../ui/Title";
 
 const AllEmpsInfo = ({ className, id, employees }) => {
   return (
     <div
       id={id}
-      className={`bg-indigo-300 p-5 mt-4 rounded-lg flex flex-col gap-2 ${className}`}
+      className={`bg-indigo-300 px-5 pb-5 mt-4 rounded-lg flex flex-col gap-2 ${className} scroll-mt-[5rem]`}
     >
+      <Title title="All Employees" />
       <div className="bg-orange-950 px-4 flex justify-between items-center rounded-lg">
         <h2 className="flex-1 text-lg h-10 flex items-center px-2">
           Employee Name

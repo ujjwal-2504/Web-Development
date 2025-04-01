@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import employeeRoutes from "./Routes/employeeRoutes.js";
 import adminRoutes from "./Routes/adminRoutes.js";
 import tasksRoutes from "./Routes/tasksRoutes.js";
+import teamRoutes from "./Routes/teamRoutes.js";
 configDotenv();
 
 // Database and server--------------------------------------------
@@ -37,37 +38,7 @@ app.get("/", (req, res) => {
   res.send("Hello");
 });
 
-app.get("/api/jokes", (req, res) => {
-  const jokes = [
-    {
-      id: 1,
-      title: "Why don't scientists trust atoms?",
-      content: "Because they make up everything!",
-    },
-    {
-      id: 2,
-      title: "Why did the scarecrow win an award?",
-      content: "Because he was outstanding in his field!",
-    },
-    {
-      id: 3,
-      title: "Why don’t skeletons fight each other?",
-      content: "They don’t have the guts.",
-    },
-    {
-      id: 4,
-      title: "Why couldn’t the bicycle stand up by itself?",
-      content: "Because it was two-tired!",
-    },
-    {
-      id: 5,
-      title: "What do you call fake spaghetti?",
-      content: "An impasta!",
-    },
-  ];
-  res.send(jokes);
-});
-
 app.use("/employee", employeeRoutes);
 app.use("/admin", adminRoutes);
 app.use("/task", tasksRoutes);
+app.use("/team", teamRoutes);

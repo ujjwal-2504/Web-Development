@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
-import admin from "./adminModel";
-import employeeModel from "./employeeModel";
+import admin from "./adminModel.js";
+import employeeModel from "./employeeModel.js";
 
 const teamSchema = new mongoose.Schema({
   name: {
@@ -70,3 +70,7 @@ const teamSchema = new mongoose.Schema({
     default: true,
   },
 });
+
+const teamModel = mongoose.model("Team", teamSchema);
+
+export default teamModel;

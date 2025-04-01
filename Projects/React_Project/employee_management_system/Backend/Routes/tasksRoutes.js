@@ -1,6 +1,7 @@
 import express from "express";
 import { authAdmin, authEmployee } from "../middlewares/authMiddleware.js";
 import employeeModel from "../Models/employeeModel.js";
+import { checkEmployee } from "../services/employee.service.js";
 
 const router = express.Router();
 
@@ -133,6 +134,15 @@ router.patch("/failed-task", async (req, res, next) => {
   } catch (error) {
     console.error("Error updating task:", error);
     res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+router.get("/all", authEmployee, async (req, res, next) => {
+  try {
+    const employees = await employeeModel.find({}); // Fetch all employees
+    res.status(200).json(employees); // Send response
+  } catch (error) {
+    next(error); // Pass error to Express error handler
   }
 });
 

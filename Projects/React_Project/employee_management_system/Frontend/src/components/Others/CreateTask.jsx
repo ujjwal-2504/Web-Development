@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
+import Title from "../ui/Title";
 
 const CreateTask = ({ id, className, adminData }) => {
   const employees = adminData.allEmpData;
@@ -84,11 +85,13 @@ const CreateTask = ({ id, className, adminData }) => {
   };
 
   return (
-    <div>
+    <div className="bg-indigo-300 text-black flex flex-col mx-8 mt-5 rounded-lg">
+      <Title title="Assign Task" />
+
       <form
         id={id}
         onSubmit={(e) => submitHandler(e)}
-        className={`bg-indigo-300 text-black p-5 flex justify-between items-center mt-5 rounded-lg ${className}`}
+        className={`bg-indigo-300 text-black px-5 pb-5 flex justify-between items-center ${className} scroll-mt-[5rem]`}
       >
         <div className="flex flex-col gap-4 h-full w-[45%]">
           <div className="flex flex-col text-lg">

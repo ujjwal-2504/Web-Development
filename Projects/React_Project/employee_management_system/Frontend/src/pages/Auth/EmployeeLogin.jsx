@@ -22,17 +22,29 @@ export default function EmployeeLogin() {
     e.preventDefault();
 
     const employeeData = { email: email, password: password };
-    const response = await axios.post(
-      `${import.meta.env.VITE_BASE_URL}/employee/login`,
-      employeeData
-    );
 
-    if (response.status === 200) {
-      const data = response.data;
-      setEmployee(data.employee);
-      localStorage.setItem("token", data.token);
-      resetForm();
-      navigate("/employee");
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/employee/login`,
+        employeeData
+      );
+
+      console.log(employee);
+      console.log("The status is:", response.status);
+
+      if (response.status === 200) {
+        const data = response.data;
+        setEmployee(data.employee);
+        localStorage.setItem("token", data.token);
+        resetForm();
+        navigate("/employee");
+      }
+    } catch (error) {
+      if (error.response?.status === 401) {
+        alert(`${error.response.data.message}`);
+      } else {
+        alert("An error occurred during login");
+      }
     }
   };
 

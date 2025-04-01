@@ -29,4 +29,14 @@ const createEmployee = async ({
   return employeeAdded;
 };
 
-export { createEmployee };
+const checkEmployee = async (employeeId) => {
+  try {
+    const response = await employeeModel.findById(employeeId);
+    return response ? true : false; // Return false if no admin is found
+  } catch (err) {
+    console.log("Error in checking admin: ", err);
+    return false; // Return false if an error occurs
+  }
+};
+
+export { createEmployee, checkEmployee };

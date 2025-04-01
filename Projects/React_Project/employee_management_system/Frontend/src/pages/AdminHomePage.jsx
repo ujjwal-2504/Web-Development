@@ -19,8 +19,8 @@ export default function AdminHomePage() {
       <Navbar who={"admin"} data={adminData} />
 
       {/* Quick Links */}
-      <div className="container p-2 flex gap-2 bg-indigo-300 mt-2">
-        <CardContent className=" flex flex-col w-full items-center text-center gap-2">
+      <div className=" p-2 flex gap-2 bg-indigo-300 mt-2 w-full">
+        <CardContent className=" flex flex-col flex-1 items-center text-center gap-2">
           <a
             href="#viewEmp"
             id="employees"
@@ -31,7 +31,7 @@ export default function AdminHomePage() {
           </a>
         </CardContent>
 
-        <CardContent className=" flex flex-col w-full items-center text-center gap-2">
+        <CardContent className=" flex flex-col flex-1 items-center text-center gap-2">
           <a
             href="#assignTask"
             id="employees"
@@ -42,7 +42,7 @@ export default function AdminHomePage() {
           </a>
         </CardContent>
 
-        <CardContent className=" flex flex-col w-full items-center text-center gap-2">
+        <CardContent className=" flex flex-col flex-1 items-center text-center gap-2">
           <Link
             to="/admin/manage-teams"
             id="teams"
@@ -53,7 +53,7 @@ export default function AdminHomePage() {
           </Link>
         </CardContent>
 
-        <CardContent className=" flex flex-col w-full items-center text-center gap-2">
+        <CardContent className=" flex flex-col flex-1 items-center text-center gap-2">
           <Link
             id="allTasks"
             to="/employee/new"

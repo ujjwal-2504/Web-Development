@@ -36,13 +36,16 @@ export default function AdminLogin() {
         const data = response.data;
         setToken(data.token);
         setAdminData(data);
+        resetForm();
         navigate("/admin");
       }
-    } catch (err) {
-      console.error("Error during admin login:", err);
+    } catch (error) {
+      if (error.response?.status === 401) {
+        alert(`${error.response.data.message}`);
+      } else {
+        alert("An error occurred during login");
+      }
     }
-
-    resetForm();
   };
 
   return (
