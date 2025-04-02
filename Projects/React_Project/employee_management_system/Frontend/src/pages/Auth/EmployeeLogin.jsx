@@ -29,9 +29,6 @@ export default function EmployeeLogin() {
         employeeData
       );
 
-      console.log(employee);
-      console.log("The status is:", response.status);
-
       if (response.status === 200) {
         const data = response.data;
         setEmployee(data.employee);

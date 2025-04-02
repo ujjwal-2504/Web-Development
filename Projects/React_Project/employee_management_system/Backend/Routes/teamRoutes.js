@@ -9,7 +9,7 @@ import { validationResult } from "express-validator";
 
 const router = express.Router();
 
-router.post("/:adminId/create", async (req, res, next) => {
+router.post("/create", authAdmin, async (req, res, next) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -17,13 +17,6 @@ router.post("/:adminId/create", async (req, res, next) => {
   }
 
   try {
-    const { adminId } = req.params;
-    const check = await checkAdmin(adminId);
-
-    if (!check) {
-      return res.status(403).json({ error: "Unauthorized: Admin not found" }); // Send response
-    }
-
     const { name, description, createdBy, members, maxMembers, activeStatus } =
       req.body;
 
@@ -78,5 +71,20 @@ router.post("/:adminId/create", async (req, res, next) => {
 });
 
 // Get team data
+router.get("/admin/get-all", authAdmin, async (req, res, next) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  try {
+    const allTeams = await teamModel.find({});
+
+    res.status(200).json(allTeams);
+  } catch (error) {
+    next(error);
+  }
+});
 
 export default router;

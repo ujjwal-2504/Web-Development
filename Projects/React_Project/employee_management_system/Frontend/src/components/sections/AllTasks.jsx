@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Title from "../ui/Title.jsx";
 
 const AllTasks = ({ allEmpTasks, refreshAllTasks, currEmp }) => {
   // State for filters
@@ -97,9 +98,7 @@ const AllTasks = ({ allEmpTasks, refreshAllTasks, currEmp }) => {
 
   return (
     <div className="container mx-auto p-5">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">
-        All Tasks
-      </h2>
+      <Title title="All Tasks" />
 
       <div className="mb-4 flex flex-wrap gap-2">
         <span className="text-sm font-medium mr-2 text-indigo-700">
