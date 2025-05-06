@@ -70,7 +70,7 @@ router.post("/create", authAdmin, async (req, res, next) => {
   }
 });
 
-// Get team data
+// Get team data for admin
 router.get("/admin/get-all", authAdmin, async (req, res, next) => {
   const errors = validationResult(req);
 
@@ -82,6 +82,77 @@ router.get("/admin/get-all", authAdmin, async (req, res, next) => {
     const allTeams = await teamModel.find({});
 
     res.status(200).json(allTeams);
+  } catch (error) {
+    next(error);
+  }
+});
+
+// Get team data for employee
+router.get("/employee/get-all", authEmployee, async (req, res, next) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  try {
+    const allTeams = await teamModel.find({});
+
+    res.status(200).json(allTeams);
+  } catch (error) {
+    next(error);
+  }
+});
+
+// add team members
+router.patch("/:teamId/add", authAdmin, async (req, res, next) => {
+  try {
+    const { teamId } = req.params;
+    const { employeeId, name, role, joinedAt } = req.body;
+
+    if (!employeeId || !name || !role || !joinedAt) {
+      return res.status(400).json({ error: "Some fields are empty" });
+    }
+
+    if (!checkEmployee(employeeId)) {
+      return res.status(404).json({ error: "Employee not found" });
+    }
+
+    const teamExist = await teamModel.findById(teamId);
+
+    if (!teamExist) {
+      return res.status(404).json({ error: "Team not found" });
+    }
+
+    const { _id } = req.admin;
+    if (_id != teamExist.createdBy.adminId) {
+      return res.status(401).json({
+        error: "You don't have permission to add Employee to the team",
+      });
+    }
+
+    if (teamExist.maxMembers <= teamExist.members.length) {
+      return res
+        .status(409)
+        .json({ error: "Team is full, max member reached" });
+    }
+
+    // Create new member object
+    const newMember = {
+      employeeId,
+      name,
+      role,
+      joinedAt: joinedAt || new Date(),
+    };
+
+    // Add member to team
+    teamExist.members.push(newMember);
+    await teamExist.save();
+
+    return res.status(200).json({
+      message: "Member added successfully",
+      team: teamExist,
+    });
   } catch (error) {
     next(error);
   }
