@@ -2,30 +2,36 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import Component from "./Component";
+import Card from "./Card";
 
 function App() {
-  // let counter = 20;
+  const [counter, setCounter] = useState(20);
 
-  let [counter, setCounter] = useState(20);
-
-  function addValue() {
-    if (counter < 20) {
-      setCounter(counter + 1);
-    }
+  function increase() {
+    setCounter((prevCounter) => prevCounter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
   }
 
-  function subtractValue() {
-    if (counter > 0) {
-      setCounter(counter - 1);
-    }
+  function decrease() {
+    setCounter(counter - 1);
   }
 
   return (
     <>
-      <h1>CHAI AUR REACT</h1>
-      <h2>Counter: {counter}</h2>
-      <button onClick={addValue}>Add value</button> <br />
-      <button onClick={subtractValue}>Subtract value</button>
+      <Card songName="Believer" singer="Imagine Dragons" />
+
+      <h1>The number is: {counter}</h1>
+
+      <button onClick={increase} className="m-1">
+        +1
+      </button>
+      <button onClick={decrease} className="m-1">
+        {" "}
+        -1
+      </button>
     </>
   );
 }
