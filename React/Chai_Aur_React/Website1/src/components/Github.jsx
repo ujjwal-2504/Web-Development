@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLoaderData } from "react-router-dom";
 
 function Github() {
-  const [data, setData] = useState([]);
+  const data = useLoaderData();
+  // const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch("https://api.github.com/users/ujjwal-2504")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setData(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://api.github.com/users/ujjwal-2504")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setData(data);
+  //     });
+  // }, []);
 
   return (
     <>
@@ -36,3 +37,8 @@ function Github() {
 }
 
 export default Github;
+
+export const githubInfoLoader = async () => {
+  const response = await fetch("https://api.github.com/users/ujjwal-2504");
+  return response.json();
+};
