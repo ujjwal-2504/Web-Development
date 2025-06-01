@@ -24,7 +24,7 @@ function Github() {
           <p>Username: {data.login}</p>
           <p>Followers:{data.followers}</p>
           <p>Following: {data.following}</p>
-          <p>Following: {data.public_repos}</p>
+          <p>Public Repositories: {data.public_repos}</p>
           <p>
             <a target="_blank" className="text-blue-400" href={data.html_url}>
               Visit
