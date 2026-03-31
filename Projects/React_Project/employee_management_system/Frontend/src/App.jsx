@@ -15,6 +15,7 @@ import EmployeeLogout from "./pages/Auth/EmployeeLogout";
 import AdminProtectedWrapper from "./pages/Auth/AdminProtectedWrapper";
 import EmpHomePage from "./pages/EmpHomePage";
 import ManageTeams from "./pages/ManageTeams";
+import Footer from "./components/Others/Footer";
 
 // Test section
 import AllTask from "./components/Others/AllEmpsInfo";
@@ -51,6 +52,7 @@ const App = () => {
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/logout" element={<AdminLogout />} />
       </Routes>
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero section - GSAP parallax cutouts</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="page" id="page1">
+      <div class="background-elements">
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="floating-shape shape3"></div>
+        <div class="floating-shape shape4"></div>
+        <div class="floating-shape shape5"></div>
+        <div class="floating-shape shape6"></div>
+      </div>
+      <section class="hero-content">
+        <div id="center-box">
+          <img id="center-image" src="./background.jpg" alt="center image" />
+          <img src="./background.png" alt="top" class="cover-image" id="cover-image-top"></img>
+          <img src="./background.png" alt="right" class="cover-image" id="cover-image-right"></img>
+          <img src="./background.png" alt="bottom" class="cover-image" id="cover-image-bottom"></img>
+          <img src="./background.png" alt="left" class="cover-image" id="cover-image-left"></img>
+        </div>
+
+        <!-- title block that participates in collapse -->
+        <div id="title-wrap">
+          <img id="title-logo" src="./gdgLogo.png" alt="GDG Logo" />
+          <div id="title">
+            <div id="title-text">Google Developer Groups</div>
+            <div id="ranchi">रांची</div>
+          </div>
+        </div>
+
+        <!-- cutouts -->
+        <div class="cutouts">
+          <img src="./Images/1.png" alt="gdg_1" class="cutout" id="cutout1" />
+          <img src="./Images/2.png" alt="gdg_2" class="cutout" id="cutout2" />
+          <img src="./Images/3.png" alt="gdg_3" class="cutout" id="cutout3" />
+          <img src="./Images/4.png" alt="gdg_4" class="cutout" id="cutout4" />
+          <img src="./Images/5.png" alt="gdg_5" class="cutout" id="cutout5" />
+          <img src="./Images/6.png" alt="gdg_6" class="cutout" id="cutout6" />
+          <img src="./Images/7.png" alt="gdg_7" class="cutout" id="cutout7" />
+          <img src="./Images/8.png" alt="gdg_8" class="cutout" id="cutout8" />
+          <img src="./Images/9.png" alt="gdg_9" class="cutout" id="cutout9" />
+          <img
+            src="./Images/10.png"
+            alt="gdg_10"
+            class="cutout"
+            id="cutout10"
+          />
+          <img
+            src="./Images/11.png"
+            alt="gdg_11"
+            class="cutout"
+            id="cutout11"
+          />
+          <img
+            src="./Images/12.png"
+            alt="gdg_12"
+            class="cutout"
+            id="cutout12"
+          />
+          <img
+            src="./Images/13.png"
+            alt="gdg_13"
+            class="cutout"
+            id="cutout13"
+          />
+          <img
+            src="./Images/14.png"
+            alt="gdg_14"
+            class="cutout"
+            id="cutout14"
+          />
+          <img
+            src="./Images/15.png"
+            alt="gdg_15"
+            class="cutout"
+            id="cutout15"
+          />
+          <img
+            src="./Images/16.png"
+            alt="gdg_16"
+            class="cutout"
+            id="cutout16"
+          />
+          <img
+            src="./Images/17.png"
+            alt="gdg_17"
+            class="cutout"
+            id="cutout17"
+          />
+        </div>
+      </section>
+    </div>
+    <div class="page" id="page2"></div>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <!-- your script -->
+    <script src="./script.js"></script>
+  </body>
+</html>

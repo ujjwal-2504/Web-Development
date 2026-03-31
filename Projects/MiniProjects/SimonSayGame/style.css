@@ -33,21 +33,20 @@ body {
   align-items: center;
 }
 
-
 .red {
-  background-color: #FF662A;
+  background-color: #ff662a;
 }
 
-.yellow{
-  background-color: #FFA22A;
+.yellow {
+  background-color: #ffa22a;
 }
 
 .green {
-  background-color: #82AC26;
+  background-color: #82ac26;
 }
 
 .purple {
-  background-color: #4F3F84;
+  background-color: #4f3f84;
 }
 
 .flash {

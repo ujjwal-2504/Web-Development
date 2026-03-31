@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+.page {
+  height: 100vh;
+  width: 100%;
+  color: white;
+  background-color: #121212;
+  border-top: black 1px solid;
+  position: relative;
+}
+
+section {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#background {
+  height: 100vh;
+  object-fit: contain;
+  opacity: 0.5;
+}
+
+#page1 {
+  position: relative;
+}
+
+.cutout {
+  position: absolute;
+}
+
+#cutout17 {
+  z-index: 117;
+  width: 788px;
+  /* display: none; */
+  top: 228px;
+  left: 317px;
+}
+
+#cutout1 {
+  z-index: 101;
+  /* display: none; */
+  top: 350px;
+  left: 96px;
+  transform: rotate(6deg);
+}
+
+#cutout2 {
+  top: 378px;
+  z-index: 102;
+  /* display: none; */
+  left: 37px;
+  width: 466px;
+}
+
+#cutout3 {
+  z-index: 105;
+  /* display: none; */
+  top: 208px;
+  right: 72px;
+  width: 498px;
+}
+
+#cutout4 {
+  z-index: 104;
+  /* display: none; */
+  bottom: -45px;
+  left: 406px;
+}
+
+#cutout5 {
+  z-index: 103;
+  /* display: none; */
+  bottom: 87px;
+  left: 433px;
+  width: 766px;
+}
+
+#cutout6 {
+  z-index: 106;
+  /* display: none; */
+  bottom: -6px;
+  width: 369px;
+  left: 121px;
+}
+
+#cutout7 {
+  z-index: 107;
+  /* display: none; */
+  top: 0;
+  width: 302px;
+  left: 125px;
+}
+
+#cutout8 {
+  z-index: 108;
+  /* display: none; */
+  opacity: 0.5;
+  top: 91px;
+  left: 115px;
+  width: 431px;
+}
+
+#cutout9 {
+  z-index: 109;
+  /* display: none; */
+  top: -2px;
+  left: 401px;
+  width: 556px;
+}
+
+#cutout10 {
+  z-index: 110;
+  /* display: none; */
+  top: 174px;
+  width: 732px;
+}
+
+#cutout11 {
+  z-index: 111;
+  /* display: none; */
+  right: 124px;
+  top: 153px;
+  width: 611px;
+  transform: rotate(-9deg);
+}
+
+#cutout12 {
+  z-index: 112;
+  /* display: none; */
+  top: -16px;
+  width: 179px;
+  right: 411px;
+}
+
+#cutout13 {
+  z-index: 113;
+  /* display: none; */
+  top: -1px;
+  right: 123px;
+  width: 312px;
+}
+
+#cutout14 {
+  z-index: 114;
+  /* display: none; */
+  right: 10px;
+  width: 633px;
+  bottom: 51px;
+}
+
+#cutout15 {
+  z-index: 115;
+  /* display: none; */
+  bottom: 0px;
+  width: 613px;
+  right: 57px;
+}
+
+#cutout16 {
+  z-index: 116;
+  /* display: none; */
+  left: 112px;
+  width: 304px;
+  top: 124px;
+}
